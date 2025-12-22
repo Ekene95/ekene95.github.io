@@ -1,0 +1,17 @@
+# Ignore specific files
+secrets.txt
+.env
+desktop.ini
+
+# Ignore all files with a specific extension
+*.log
+*.mp4
+
+# Ignore a specific folder and everything in it
+node_modules/
+dist/
+build/
+
+# Ignore a folder but keep one specific file inside it
+logs/*
+!logs/keep-this-file.txt
