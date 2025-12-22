@@ -186,15 +186,28 @@
             .case-study-grid { grid-template-columns: 1fr; }
             .job-header { flex-direction: column; }
         }
+
+        /* ADD THIS TO YOUR CSS BLOCK */
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%; /* Makes it a circle */
+            object-fit: cover;
+            border: 4px solid var(--accent); /* Electric Cyan Border */
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.3); /* Glow effect */
+            margin-bottom: 25px;
+        }
     </style>
 </head>
 <body>
 
     <header class="hero">
         <div class="container">
+            <img src="profile.jpg" alt="Joseph Ekene Ejike" class="profile-img">
+            
             <h1>Joseph Ekene Ejike</h1>
             <h2>Lead Product Security Engineer & DevSecOps Architect</h2>
-            <p>I don't just patch vulnerabilities. I architect the automated standards that prevent them at enterprise scale.</p>
+            <p>I combine the <strong>mindset of an advanced adversary</strong> with the discipline of a systems architect to build secure, scalable platforms.</p>
             <br>
             <a href="#architecture" class="btn">View Architecture</a>
             <a href="mailto:ekeneejike@gmail.com" class="btn btn-outline">Contact Me</a>
@@ -205,9 +218,11 @@
         <div class="container">
             <h2>About Me</h2>
             <p style="font-size: 1.1rem; max-width: 800px; color: var(--text-muted);">
-                I am a <strong>Lead Product Security Engineer & DevSecOps Architect</strong> dedicated to bridging the gap between development velocity and enterprise-grade security. 
+                I am a <strong>Lead Product Security Engineer</strong> who believes you cannot secure what you cannot break. 
                 <br><br>
-                My expertise lies in designing <strong>scalable engineering standards</strong> that eliminate friction for product teams while enforcing rigorous compliance. I specialize in architecting <strong>"Golden Pipelines"</strong> that strictly govern the software supply chain and engineering <strong>zero-touch identity systems</strong> that harden the perimeter without slowing down innovation.
+                My background is rooted in <strong>Offensive Security</strong>—uncovering critical logic flaws like Race Conditions, Authentication & Authorization and IDORs in complex financial systems. I leverage this deep understanding of attack vectors to architect <strong>"Golden Pipelines"</strong> and <strong>Zero-Trust Identity systems</strong> that stop adversaries before they gain a foothold.
+                <br><br>
+                Currently, I lead security engineering at <strong>FCMB Group</strong>, bridging the gap between aggressive penetration testing and automated DevSecOps defense.
             </p>
         </div>
     </section>
@@ -289,6 +304,15 @@
         <div class="container">
             <h2>Technical Arsenal</h2>
             <div class="skills-grid">
+                <div class="skill-column">
+                    <h3><i class="fas fa-bug"></i> Offensive Security & VAPT</h3>
+                    <ul>
+                        <li><strong>Web/API:</strong> Burp Suite Pro, Postman, OWASP ZAP</li>
+                        <li><strong>Mobile (iOS/Android):</strong> Frida, Objection, Jadx-GUI, Apktool, adb, Ghidra</li>
+                        <li><strong>Network Recon:</strong> Nmap, Wireshark, Metasploit</li>
+                        <li><strong>Exploit Dev:</strong> Python Scripting, Bash Automation</li>
+                    </ul>
+                </div>
                 <div class="skill-column">
                     <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
                     <ul>
