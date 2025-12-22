@@ -1,91 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ekene's Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Ekene Ejike | Lead Product Security Engineer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+
+    <style>
+        /* --- CORE VARIABLES (SaaS Theme) --- */
+        :root {
+            --bg-dark: #0f172a;       /* Deep Navy */
+            --bg-card: #1e293b;       /* Lighter Navy */
+            --accent: #22d3ee;        /* Electric Cyan */
+            --text-main: #f1f5f9;     /* White/Grey */
+            --text-muted: #94a3b8;    /* Muted Blue-Grey */
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: var(--accent); transition: 0.3s; }
+        a:hover { color: #fff; }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section { padding: 80px 0; border-bottom: 1px solid #334155; }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        h3 { color: var(--text-main); margin-bottom: 10px; }
+
+        /* --- HERO SECTION --- */
+      .hero {
+    
+          min-height: 30vh;  /* Reduces the forced height significantly */
+          padding: 50px 0;   /* Adds consistent breathing room top/bottom */
+    
+    /* Keep these existing lines: */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          background: radial-gradient(circle at top, #1e293b 0%, #0f172a 70%);
+      }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: -webkit-linear-gradient(0deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h2 {
+            border: none;
+            padding: 0;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent);
+            color: var(--bg-dark);
+            font-weight: 600;
+            border-radius: 5px;
+            margin: 0 10px;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        /* --- ARCHITECTURE & CASE STUDIES --- */
+        .case-study {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .diagram-container {
+            background: #00000030;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+        }
+
+        .tech-stack {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .tech-tag {
+            background: #334155;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-right: 5px;
+            color: #fff;
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .skill-column h3 { color: var(--accent); margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
+        .skill-column ul { list-style: none; }
+        .skill-column li { margin-bottom: 12px; color: var(--text-muted); }
+        .skill-column i { width: 25px; color: var(--text-main); }
+
+        /* --- EXPERIENCE --- */
+        .job-entry { margin-bottom: 50px; }
+        .job-header { display: flex; justify-content: space-between; margin-bottom: 15px; }
+        .company { color: var(--accent); font-weight: 600; }
+        .job-entry ul { margin-left: 20px; color: var(--text-muted); }
+        .job-entry li { margin-bottom: 10px; }
+
+        /* --- OLD PROJECTS (Small Cards) --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .mini-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+        .mini-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .mini-card h3 { font-size: 1.1rem; }
+        .mini-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
+
+        /* --- MOBILE RESPONSIVENESS --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .case-study-grid { grid-template-columns: 1fr; }
+            .job-header { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Ekene's Cybersecurity Portfolio</h1>
-    <p>Your trusted guide in application security, DevSecOps, and cybersecurity education.</p>
-  </header>
-  
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Application Security Engineer with half a decade of diverse experience in IT and cybersecurity, specializing in application security across the Software Development Lifecycle (SDLC). Skilled in securing mobile, web, and API applications, as well as software supply chains. I possess a deep understanding of threat modeling, code reviews, penetration testing, and supply chain security assessments, which I apply across each stage of development to protect against potential vulnerabilities and threats. Proficient in designing and managing secure CI/CD pipelines that incorporate private artifact registries, container scanning, code quality checks, and static and dynamic application security testing (SAST/DAST), to secure the software supply chain, reducing risks by enforcing strict security measures and maintaining software integrity. In previous roles within the information technology industry, I've provided essential vulnerability assessments, cloud security, and technical support for critical systems. Let’s connect to strengthen your organization’s security posture with comprehensive application and infrastructure security solutions.</p>
-  </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Application Security: Threat modeling, code reviews, penetration testing, vulnerability assessments</li>
-      <li>SDLC Security: Secure CI/CD pipelines, artifact registries, code quality, SAST/DAST, IaC scanning</li>
-      <li>Software Supply Chain Security: Component analysis, SBOM generation, private artifact registries</li>
-      <li>Infrastructure Security: Cloud security, network security, container security, system hardening</li>
-      <li>Technical Expertise: OWASP ZAP, Burp Suite, Nessus, Postman, Python, Bash, Linux, Windows, checkmarx, snyk, google artifact registry, AWS Security Hub, etc.</li>
-    </ul>
-  </section>
+    <header class="hero">
+        <div class="container">
+            <h1>Joseph Ekene Ejike</h1>
+            <h2>Lead Product Security Engineer & DevSecOps Architect</h2>
+            <p>I don't just patch vulnerabilities. I architect the automated standards that prevent them at enterprise scale.</p>
+            <br>
+            <a href="#architecture" class="btn">View Architecture</a>
+            <a href="mailto:ekeneejike@gmail.com" class="btn btn-outline">Contact Me</a>
+        </div>
+    </header>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div>
-      <h3>Cybersecurity Analyst at SecureTech</h3>
-      <p>Developed and implemented security protocols for decentralized applications, ensuring data integrity and user privacy.</p>
-    </div>
-    <!-- Add more experience here -->
-  </section>
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p style="font-size: 1.1rem; max-width: 800px; color: var(--text-muted);">
+                I am a <strong>Lead Product Security Engineer & DevSecOps Architect</strong> dedicated to bridging the gap between development velocity and enterprise-grade security. 
+                <br><br>
+                My expertise lies in designing <strong>scalable engineering standards</strong> that eliminate friction for product teams while enforcing rigorous compliance. I specialize in architecting <strong>"Golden Pipelines"</strong> that strictly govern the software supply chain and engineering <strong>zero-touch identity systems</strong> that harden the perimeter without slowing down innovation.
+            </p>
+        </div>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Incident response simulation with NixGuard and reporting.</h3>
-      <p>A practical incident response report which can be used in real world cyber incidents.</p>
-      <a href="https://famous-border-856.notion.site/TechSphere-Incident-Report-13aa22020c2080bd93c4f711e739ad6a?pvs=4" class="btn">View Report</a>
-      <a href="https://docs.google.com/document/d/1zRY0U1sDW1wat6yQqpfrA0jhKjH_bwwvU_7wvCJaOfM/edit?usp=sharing" class="btn">View Simulation</a>
-    </div>
-    <!-- Add more projects here -->
-    <div class="project-card">
-      <h3>Threat Hunting with Wazuh FIM and Yara for Linux Endpoints.</h3>
-      <p>Combining Wazuh File Integrity Monitoring (FIM) with Yara's powerful pattern matching for proactive threat detection.</p>
-      <a href="https://medium.com/@ekeneejike/threat-hunting-with-wazuh-fim-and-yara-on-linux-endpoints-cf8f5b84ae6e" class="btn">View Project</a>
-    </div>
-    
-    <div class="project-card">
-      <h3>Log Parsing with Bash Scripting.</h3>
-      <p>A simple script that continuously monitors for entries related to failed login attempts, performs a geolocation lookup and displays the country and IP address of the attacker.</p>
-      <a href="https://medium.com/@ekeneejike/simple-bash-script-for-log-analysis-db003dd9be" class="btn">View Project</a>
-    </div>
-    
-    <div class="project-card">
-      <h3>Vulnerability scanner.</h3>
-      <p>A simple Bash script that maps all devices on a network, identifies services and potential vulnerabilities and saves the report in a file.</p>
-      <a href="https://www.youtube.com/watch?v=LWZckCdFH1I&t=182s" class="btn">View Clip</a>
-    </div>
-  </section>
+    <section id="architecture">
+        <div class="container">
+            <h2>Architectural Case Studies</h2>
 
-  <section id="Articles">
-    <h2>Tech Articles</h2>
-    <div class="project-card">
-      <h3>Medium</h3>
-      <p>A link to some of my techincal articles on Medium.</p>
-      <a href="https://medium.com/@ekeneejike/" class="btn">View articles on Medium</a>
-    </div>
-    <!-- Add more projects here -->
-    <div class="project-card">
-      <h3>Warp</h3>
-      <p>My techincal articles on Warp.</p>
-      <a href="https://www.warp.dev/terminus/kubectl-get-logs" class="btn">Kube Logs</a>
-      <a href="https://www.warp.dev/terminus/delete-kubernetes-deployments-with-kubectl" class="btn">Kube Delete</a>
-    </div>
-    
-  </section>
+            <div class="case-study">
+                <div class="case-study-grid">
+                    <div class="content">
+                        <h3>1. The Enterprise "Golden Pipeline" Standard</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>The Challenge:</strong> Fragmented deployment processes led to unverified dependencies and base image staleness entering production.
+                        </p>
+                        <p style="color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>The Solution:</strong> I architected a unified DevSecOps standard using <strong>Google Artifact Registry</strong> as the central control plane. 
+                            <br><br>
+                            This enforces a strict supply chain policy:
+                            <ul style="margin-left: 20px; font-size: 0.95rem; color: var(--text-muted);">
+                                <li><strong>Dependency Proxying:</strong> Caching public/private dependencies to prevent upstream outages.</li>
+                                <li><strong>Base Image Refresh:</strong> Automated triggers to rebuild containers when base images are patched.</li>
+                                <li><strong>Provenance:</strong> Signing images with Cosign before pushing to the registry.</li>
+                            </ul>
+                        </p>
+                        <p style="color: var(--accent); margin-top: 15px;">
+                            <strong>Impact:</strong> Adopted by all product teams. Eliminated unverified binaries and ensured 100% of production artifacts are signed and scanned.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Google Artifact Registry</span>
+                            <span class="tech-tag">Snyk</span>
+                            <span class="tech-tag">Cosign</span>
+                            <span class="tech-tag">OWASP ZAP</span>
+                        </div>
+                    </div>
+                    
+                    <div class="diagram-container" style="background: transparent; border: none; padding: 0;">
+                        <img src="pipeline.png" alt="DevSecOps Pipeline Architecture" style="width: 100%; border-radius: 8px; border: 1px solid #334155; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);">
+                    </div>
+                </div>
+            </div>
 
-  <footer>
-    <p>Connect with me: <a href="https://linkedin.com/in/ekene-joseph-ejike">LinkedIn</a> | <a href="mailto:ekeneejike@gmail.com">Email</a> | <a href="https://github.com/Ekene95">GitHub</a></p>
-  </footer>
-  
-  <script src="script.js"></script>
+            <div class="case-study">
+                <div class="case-study-grid">
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+                        graph TD
+                            HR[Jira Service Mgmt] -->|Webhook| Okta[Okta Workflows]
+                            Okta -->|Onboard| Prov[Provision AWS & JumpCloud]
+                            Okta -->|Offboard| Kill[Revoke Sessions & Lock Device]
+                            style Kill fill:#7f1d1d,stroke:#fff
+                        </pre>
+                    </div>
+                    <div class="content">
+                        <h3>2. Zero-Touch Identity & Access Automation</h3>
+                        <p style="color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>The Challenge:</strong> Manual onboarding created "ghost accounts" and delayed access revocation, risking compliance failures.
+                        </p>
+                        <p style="color: var(--text-muted); margin-bottom: 15px;">
+                            <strong>The Solution:</strong> Engineered a fully automated lifecycle using Jira, Okta, and JumpCloud. Access is granted based on Role (RBAC) and revoked instantly upon contract termination.
+                        </p>
+                        <p style="color: var(--accent);">
+                            <strong>Impact:</strong> Reduced IT overhead by 90% and ensured 100% audit compliance for ISO 27001 access controls.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Okta Workflows</span>
+                            <span class="tech-tag">Jira Automation</span>
+                            <span class="tech-tag">JumpCloud</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-column">
+                    <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+                    <ul>
+                        <li>AWS Security Hub & GuardDuty</li>
+                        <li>Docker & Kubernetes Security</li>
+                        <li>Terraform (IaC) & System Hardening</li>
+                        <li>Linux Endpoint Security</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <h3><i class="fas fa-shield-alt"></i> AppSec & Supply Chain</h3>
+                    <ul>
+                        <li>Google Artifact Registry Governance</li>
+                        <li>Snyk, Checkmarx, SonarQube</li>
+                        <li>GitHub Advanced Security</li>
+                        <li>Threat Modeling & SBOM Management</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <h3><i class="fas fa-file-contract"></i> Governance & Identity</h3>
+                    <ul>
+                        <li>ISO 27001 & PCI DSS Implementation</li>
+                        <li>Zero Trust Architecture (Okta/JumpCloud)</li>
+                        <li>RBAC Design & Policy Enforcement</li>
+                        <li>Incident Response & Forensics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <h3>Lead Product Security Engineer</h3>
+                    <span class="company">FCMB Group | Oct 2024 - Present</span>
+                </div>
+                <ul>
+                    <li><strong>DevSecOps Standardization:</strong> Designed and implemented the "Golden Pipeline" standard for the organization's flagship <strong>Banking-as-a-Service (BaaS) APIs</strong> and <strong>Global Payment Platforms</strong>, ensuring secure delivery for high-volume financial transactions.</li>
+                    <li><strong>Supply Chain Governance:</strong> Enforced strict artifact integrity across all engineering teams by mandating verified container registries, eliminating risks of dependency confusion and supply chain attacks.</li>
+                    <li><strong>Identity & Access Architecture:</strong> Engineered an automated, zero-touch identity lifecycle system for the workforce, integrating HR triggers with cloud identity providers to enforce Zero Trust access controls.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <h3>Application Security Engineer</h3>
+                    <span class="company">First Bank Plc | Sep 2023 - Sep 2024</span>
+                </div>
+                <ul>
+                    <li><strong>Vulnerability Management:</strong> Conducted comprehensive penetration testing on critical <strong>Consumer Mobile Apps</strong> and <strong>Corporate Banking APIs</strong>, identifying and remediating high-severity logic flaws (IDOR, Race Conditions).</li>
+                    <li><strong>Pipeline Security:</strong> Integrated automated security gates (SAST/DAST) into existing CI/CD workflows, reducing the deployment of critical vulnerabilities by 40%.</li>
+                    <li><strong>Infrastructure Protection:</strong> Deployed and tuned Web Application Firewalls (WAF) to protect backend database connections and sensitive customer data from application-layer attacks.</li>
+                </ul>
+            </div>
+            
+            <div class="job-entry">
+                <div class="job-header">
+                    <h3>Cybersecurity Instructor & Mentor</h3>
+                    <span class="company">Freelance / Community | Jan 2022 - Present</span>
+                </div>
+                <ul>
+                    <li><strong>Curriculum Development:</strong> Designed and delivered hands-on labs focused on Cryptography, SIEM Architecture (Wazuh), and Incident Response.</li>
+                    <li><strong>Mentorship:</strong> Mentored over 300 students, guiding them through practical capstone projects to transition into professional cybersecurity roles.</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <div class="job-header">
+                    <h3>Technical Support Engineer (L3)</h3>
+                    <span class="company">Tek Experts (OpenText) | Sept 2021 - Aug 2023</span>
+                </div>
+                <ul>
+                    <li><strong>Infrastructure Monitoring:</strong> Managed enterprise-grade network monitoring solutions (NNMi), overseeing cluster management and platform upgrades for global clients.</li>
+                    <li><strong>Container Operations:</strong> Supported Kubernetes and Docker deployments, ensuring configuration compliance with enterprise security policies.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Open Source & Tools</h2>
+            <div class="project-grid">
+                <div class="mini-card">
+                    <h3><i class="fab fa-linux"></i> Threat Hunting with Wazuh</h3>
+                    <p>Combining Wazuh FIM with Yara for proactive threat detection on Linux endpoints.</p>
+                    <a href="https://medium.com/@ekeneejike/threat-hunting-with-wazuh-fim-and-yara-on-linux-endpoints-cf8f5b84ae6e" target="_blank">Read Article &rarr;</a>
+                </div>
+                <div class="mini-card">
+                    <h3><i class="fas fa-terminal"></i> Bash Log Analyzer</h3>
+                    <p>Automated script for parsing failed login attempts and performing geolocation analysis.</p>
+                    <a href="https://medium.com/@ekeneejike/simple-bash-script-for-log-analysis-db003dd9be" target="_blank">View Code &rarr;</a>
+                </div>
+                <div class="mini-card">
+                    <h3><i class="fas fa-network-wired"></i> Network Vuln Scanner</h3>
+                    <p>Bash-based network mapper and service identifier for rapid assessments.</p>
+                    <a href="https://www.youtube.com/watch?v=LWZckCdFH1I&t=182s" target="_blank">Watch Demo &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="thought-leadership">
+        <div class="container">
+            <h2>Thought Leadership & Knowledge Sharing</h2>
+            
+            <h3 style="color: var(--accent); margin-bottom: 20px; margin-top: 30px;">
+                <i class="fas fa-chalkboard-teacher"></i> Technical Workshops & Speaking
+            </h3>
+            
+            <div class="case-study-grid" style="margin-bottom: 50px;">
+                <div class="mini-card" style="border-left: 4px solid var(--accent);">
+                    <h3>🚀 AWS Cloud Architecture: Deploying Scalable Workloads</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>Focus:</strong> AWS ECS Fargate, RDS MySQL, Application Load Balancers (ALB).
+                    </p>
+                    <p>
+                        Designed and delivered a technical session on deploying production-grade WordPress architectures. Demonstrated container orchestration patterns, ECS-to-RDS networking, and the integration of Docker Hub into the deployment workflow.
+                        <br><br>
+                        <em>"Simplifying complex networking to help practitioners connect the dots between stateless containers and stateful databases."</em>
+                    </p>
+                    <br>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350511119863574529/" class="btn btn-outline" style="font-size: 0.8rem;">View LinkedIn Post</a>
+                </div>
+
+                <div class="mini-card" style="border-left: 4px solid var(--accent);">
+                    <h3>🛡️ Exploiting Vulnerabilities: Network & App Security</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 10px;">
+                        <strong>Focus:</strong> Ethical Hacking, Real-world Attack Simulations.
+                    </p>
+                    <p>
+                        Hosted a live interactive session for over 100 cybersecurity professionals. Walked through the lifecycle of an attack, demonstrating how ethical hackers identify network vulnerabilities and mitigate application exploits in real-time.
+                    </p>
+                    <br>
+                    <a href="https://www.linkedin.com/video/live/urn:li:ugcPost:7243184226819280896/?isInternal=true&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_recent_activity_content_view%3BVZQafnjSQNe4vWyfh7fK0w%3D%3D" class="btn btn-outline" style="font-size: 0.8rem;">Watch Session Clip</a>
+                </div>
+            </div>
+
+            <h3 style="color: var(--accent); margin-bottom: 20px;">
+                <i class="fas fa-pen-nib"></i> Featured Publications
+            </h3>
+
+            <div class="project-grid">
+                <div class="mini-card" style="width: 100%; grid-column: span 2;">
+                    <h3>Kubernetes Operations with Warp</h3>
+                    <p>A technical series on optimizing K8s workflows using the Warp terminal. Covering advanced log analysis and deployment management.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://www.warp.dev/terminus/kubectl-get-logs" target="_blank" style="margin-right: 15px; color: var(--accent);">Read: Kube Logs &rarr;</a>
+                        <a href="https://www.warp.dev/terminus/delete-kubernetes-deployments-with-kubectl" target="_blank" style="color: var(--accent);">Read: Kube Delete &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container" style="text-align: center; padding: 40px 0; color: var(--text-muted);">
+            <p>
+                <a href="https://linkedin.com/in/ekene-joseph-ejike"><i class="fab fa-linkedin"></i> LinkedIn</a> &nbsp;|&nbsp; 
+                <a href="https://github.com/Ekene95"><i class="fab fa-github"></i> GitHub</a> &nbsp;|&nbsp; 
+                <a href="mailto:ekeneejike@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </p>
+            <br>
+            <p>&copy; 2025 Joseph Ekene Ejike. Architecting Secure Futures.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
