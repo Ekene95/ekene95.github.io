@@ -1,14 +1,12 @@
 # Joseph Ekene Ejike | Product Security & DevSecOps Portfolio
 
-[![Security Scan](https://img.shields.io/badge/Trivy-Verified-brightgreen?logo=trivy)](https://github.com/Ekene95/ekeneejike.github.io/actions)
-[![Build Status](https://github.com/Ekene95/ekeneejike.github.io/actions/workflows/deploy.yaml/badge.svg)](https://github.com/Ekene95/ekeneejike.github.io/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository hosts my professional portfolio, architected to demonstrate the intersection of **Offensive Security research** and **Defensive DevSecOps engineering**.
 
 ---
 
-## rchitectural Overview
+## Architectural Overview
 The portfolio is designed as a stateless, high-performance web presence using a SaaS-inspired theme. It leverages **Mermaid.js** for real-time architectural rendering.
 
 ### Core Tech Stack:
