@@ -1,53 +1,45 @@
-# Joseph Ekene Ejike | Lead Product Security Engineer & Architect
+# Joseph Ekene Ejike | Product Security & DevSecOps Portfolio
 
-[![GitHub Pages](https://img.shields.io/badge/Status-Deployed-success)](https://ekene95.github.io/)
-[![Tech Stack](https://img.shields.io/badge/Stack-HTML5%20%7C%20CSS3%20%7C%20Mermaid.js-blue)]()
+[![Security Scan](https://img.shields.io/badge/Trivy-Verified-brightgreen?logo=trivy)](https://github.com/Ekene95/ekeneejike.github.io/actions)
+[![Build Status](https://github.com/Ekene95/ekeneejike.github.io/actions/workflows/deploy.yaml/badge.svg)](https://github.com/Ekene95/ekeneejike.github.io/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This repository contains the source code for my professional portfolio, hosted on GitHub Pages. It serves as a central hub demonstrating my work in **DevSecOps Architecture**, **Supply Chain Security**, and **Identity Automation**.
-
-**[🔗 View Live Portfolio](https://ekene95.github.io/)**
-
-## 🏗️ Project Architecture
-
-This portfolio is designed as a lightweight, high-performance **Single Page Application (SPA)**. It avoids heavy frameworks in favor of semantic HTML5 and vanilla CSS to ensure maximum speed and accessibility.
-
-### Technical Implementation
-* **Core Structure:** Semantic HTML5 for SEO and accessibility.
-* **Styling:** Custom CSS3 using CSS Variables (`:root`) for a consistent "SaaS/Architect" dark theme (Navy/Teal).
-* **Diagrams as Code:** Integrated **Mermaid.js** to render architectural flowcharts dynamically within the browser.
-* **Visual Assets:** FontAwesome 6 for iconography; Custom high-fidelity architecture diagrams for case studies.
-
-## 🛡️ Featured Case Studies
-
-The portfolio highlights two major architectural standards I have designed and implemented:
-
-### 1. The Enterprise "Golden Pipeline"
-A standardized DevSecOps workflow enforcing supply chain governance.
-* **Tech:** GitHub Actions, Snyk, TruffleHog, Cosign.
-* **Key Mechanism:** Mandatory artifact verification via Google Artifact Registry before deployment to AWS ECS.
-
-### 2. Zero-Touch Identity Lifecycle
-An automated Identity & Access Management (IAM) framework.
-* **Tech:** Okta Workflows, Jira Service Management, JumpCloud, Python.
-* **Key Mechanism:** HR-triggered provisioning and instant "kill-switch" deprovisioning to enforce Zero Trust.
-
-## 🚀 Local Development
-
-To view this project locally:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/Ekene95/ekene95.github.io.git](https://github.com/Ekene95/ekene95.github.io.git)
-    ```
-2.  **Open the file:**
-    Simply open `index.html` in any modern web browser. No build steps or node modules required.
+This repository hosts my professional portfolio, architected to demonstrate the intersection of **Offensive Security research** and **Defensive DevSecOps engineering**.
 
 ---
 
-### Contact & Socials
+## rchitectural Overview
+The portfolio is designed as a stateless, high-performance web presence using a SaaS-inspired theme. It leverages **Mermaid.js** for real-time architectural rendering.
 
-* **LinkedIn:** [Joseph Ekene Ejike](https://linkedin.com/in/ekene-joseph-ejike)
-* **Email:** ekeneejike@gmail.com
-* **GitHub:** [@Ekene95](https://github.com/Ekene95)
+### Core Tech Stack:
+* **Frontend:** HTML5, CSS3 (Custom Variables), Inter/JetBrains Mono Typography.
+* **Logic Visualization:** Mermaid.js (Architecture-as-Code).
+* **Deployment:** GitHub Pages via GitHub Actions.
 
-&copy; 2025 Joseph Ekene Ejike.
+---
+
+## Featured Case Study: Project NetShield
+The primary technical highlight of this portfolio is **Project NetShield**, a supply chain security framework I developed to solve the "Security Debt" of unverified base images.
+
+**Key Engineering Wins:**
+* **Shift-Left Order:** Build → Scan → Push → Sign.
+* **Parallel Validation:** Independent AMD64 and ARM64 scanning using a GitHub Matrix strategy.
+* **Provenance:** Keyless OIDC signing with **Sigstore/Cosign**.
+
+---
+
+## How to Navigate
+* `index.html`: The core portfolio structure and content.
+* `Profile.jpg`: Professional identity asset.
+
+---
+
+## Professional Contact
+I am a **Lead Product Security Engineer** currently focused on enterprise-scale security architecture and adversarial research.
+
+- **LinkedIn:** [Joseph Ekene Ejike](https://linkedin.com/in/ekene-joseph-ejike)
+- **Portfolio Site:** [ekeneejike.github.io](https://ekeneejike.github.io)
+- **Email:** ekeneejike@gmail.com
+
+---
+*© 2026 Joseph Ekene Ejike. Defensive Systems. Offensive Mindset.*
