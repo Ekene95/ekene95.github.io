@@ -920,6 +920,7 @@
                 <li><a href="#arsenal">Arsenal</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#leadership">Leadership</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -958,11 +959,11 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-value">0</div>
-                    <div class="stat-label">Critical Base Image CVEs AT BUILD TIME</div>
+                    <div class="stat-label">Critical Base Image CVEs at Build Time</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-value">40%</div>
-                    <div class="stat-label">Vuln Reduction</div>
+                    <div class="stat-value">150K+</div>
+                    <div class="stat-label">Nodes Analyzed in <30s</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-value">100%</div>
@@ -987,7 +988,7 @@
                 <div class="case-study">
                     <div class="case-badge">
                         <i class="fas fa-shield-virus"></i>
-                        ZERO-CVE BASE IMMAGE GUARANTEE
+                        ZERO-CVE RUNTIME BASE IMMAGE GUARANTEE
                     </div>
                     <h3>Project NetShield: Multi-Arch Hardened Runtimes</h3>
                     
@@ -998,7 +999,7 @@
                                 <br><br>
                                 <strong>The Architecture:</strong> Engineered a "Shift-Left" factory using Wolfi (Undistro) and apko. I implemented a parallel GitHub Matrix strategy to independently build, scan (Trivy), and sign (Cosign) AMD64 and ARM64 images.
                                 <br><br>
-                                <strong>Impact:</strong> Achieved zero critical vulnerabilities in production base images while maintaining full supply chain transparency through cryptographic signatures.
+                                <strong>Impact:</strong> Achieved zero critical vulnerabilities in production runtime base images while maintaining full supply chain transparency through cryptographic signatures.
                             </p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Wolfi</span>
@@ -1092,6 +1093,36 @@ graph TD
                                 <span class="tech-tag">Jira Automation</span>
                                 <span class="tech-tag">JumpCloud</span>
                                 <span class="tech-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-badge"><i class="fas fa-mobile-alt"></i> ADVERSARIAL RESEARCH</div>
+                    <h3>NetShield: Automated Mobile SSL Bypass Suite</h3>
+                    <div class="case-study-grid">
+                        <div class="diagram-container">
+                            <pre class="mermaid">
+graph TD
+    A[Target APK] --> B{Static Detection}
+    B -- Flutter --> C[Native Hook libflutter]
+    B -- Java --> D[Hook TrustManager]
+    C & D --> E[Runtime Bypass via Frida]
+    E --> F[Intercept Encrypted Traffic]
+                            </pre>
+                        </div>
+                        <div>
+                            <p class="case-description">
+                                <strong>The Challenge:</strong> Modern apps use native SSL implementations (BoringSSL) that evade standard interception tools.
+                                <br><br>
+                                <strong>The Solution:</strong> Built an orchestration engine that combines static pattern matching with Frida-based runtime instrumentation to bypass pinning in Flutter, OkHttp, and custom TrustManagers.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Frida</span>
+                                <span class="tech-tag">BoringSSL</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Reverse Engineering</span>
                             </div>
                         </div>
                     </div>
@@ -1233,13 +1264,16 @@ graph TD
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>NetShield Hardened Images</h3>
-                    <p>Hardened, 0-CVE multi-arch base images built with Wolfi/apko and cryptographically signed with Cosign for supply chain verification.</p>
+                    <p>Hardened, 0-CVE runtime multi-arch base images built with Wolfi/apko and cryptographically signed with Cosign for supply chain verification.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <a href="https://github.com/Ekene95/secops-base-images" class="project-link" target="_blank">
                             <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="https://hub.docker.com/u/kenzman" class="project-link" target="_blank">
                             <i class="fab fa-docker"></i> Registry <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://dev.to/kenzman/from-base-images-to-runtime-factories-eliminating-sca-noise-with-event-driven-rebuilds-3egm" class="project-link" target="_blank">
+                            <i class="fab fa-dev"></i> Article <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -1251,7 +1285,7 @@ graph TD
                     <h3>Threat Hunting with Wazuh</h3>
                     <p>Combining Wazuh File Integrity Monitoring with Yara rules for proactive threat detection on Linux endpoints.</p>
                     <a href="https://medium.com/@ekeneejike/threat-hunting-with-wazuh-fim-and-yara-on-linux-endpoints-cf8f5b84ae6e" class="project-link" target="_blank">
-                        Read Article <i class="fas fa-arrow-right"></i>
+                        <i class="fab fa-medium"></i> Read Article <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -1262,7 +1296,7 @@ graph TD
                     <h3>Bash Log Analyzer</h3>
                     <p>Automated script for parsing authentication logs, detecting anomalies, and performing geolocation analysis on failed login attempts.</p>
                     <a href="https://medium.com/@ekeneejike/simple-bash-script-for-log-analysis-db003dd9be" class="project-link" target="_blank">
-                        View Code <i class="fas fa-arrow-right"></i>
+                       <i class="fab fa-medium"></i> View Code <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -1273,7 +1307,7 @@ graph TD
                     <h3>Network Vulnerability Scanner</h3>
                     <p>Bash-based network mapper and service identifier for rapid security assessments and reconnaissance.</p>
                     <a href="https://www.youtube.com/watch?v=LWZckCdFH1I&t=182s" class="project-link" target="_blank">
-                        Watch Demo <i class="fas fa-arrow-right"></i>
+                       <i class="fab fa-youtube"></i> Watch Demo <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
@@ -1285,10 +1319,10 @@ graph TD
                     <p>Technical series on optimizing K8s log analysis, deployment management, and security hardening using modern tooling.</p>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
                         <a href="https://www.warp.dev/terminus/kubectl-get-logs" class="project-link" target="_blank">
-                            Kube Logs <i class="fas fa-arrow-right"></i>
+                           <i class="fab fa-terminal"></i> Kube Logs <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="https://www.warp.dev/terminus/delete-kubernetes-deployments-with-kubectl" class="project-link" target="_blank">
-                            Kube Delete <i class="fas fa-arrow-right"></i>
+                           <i class="fab fa-terminal"></i> Kube Delete <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -1300,8 +1334,60 @@ graph TD
                     <h3>AWS Cloud Architecture Workshop</h3>
                     <p>Delivered technical workshops on ECS Fargate, RDS security, and Docker Hub integration patterns for scalable workloads.</p>
                     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350511119863574529/" class="project-link" target="_blank">
-                        View Workshop <i class="fas fa-arrow-right"></i>
+                       <i class="fab fa-linkedin"></i> View Workshop <i class="fas fa-arrow-right"></i>
                     </a>
+                </div>
+
+                <div class="project-card" style="border-color: var(--accent-cyan);">
+                    <div class="project-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>NetShield Analyzer (Java)</h3>
+                    <p>A static analysis engine designed to solve SCA "noise." Successfully mapped 158K+ call graph nodes in <30s during benchmarks, identifying reachable vs. unreachable vulnerabilities.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://github.com/Netshield-Enterprise/netshield-analyzer" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://dev.to/kenzman/39-cves-in-webgoat-only-36-were-reachable-3i6m" class="project-link" target="_blank">
+                            <i class="fab fa-dev"></i> Technical Research <i class="fas fa-arrow-right"></i> 
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Banking Infrastructure Lab</h3>
+                    <p>A full-scale Kubernetes-based simulation of a banking environment designed for validating zero-trust architectures and simulating multi-stage attack vectors.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="https://github.com/Commando-X/vuln-bank-devsecops/pull/14" class="project-link" target="_blank">
+                            <i class="fas fa-code-branch"></i> View Contribution <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">// THOUGHT LEADERSHIP</span>
+                <h2 class="section-title">Speaking & Mentorship</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-microphone"></i></div>
+                    <h3>ISC2 Nigeria Chapter</h3>
+                    <p>Delivered "Threat Modeling for Complex Ecosystems," teaching architectural security to certified practitioners.</p>
+                    <span class="tech-tag">CPE Provider</span>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h3>ISACA Lagos Boot Camp</h3>
+                    <p>Instructor for a 2-part Offensive Security series using the "Banking Infrastructure Lab" to train professionals on multi-stage attack vectors and zero-trust validation.</p>
+                    <span class="tech-tag">SME Training</span>
                 </div>
             </div>
         </div>
@@ -1323,6 +1409,9 @@ graph TD
                     </a>
                     <a href="https://medium.com/@ekeneejike" target="_blank" aria-label="Medium">
                         <i class="fab fa-medium"></i>
+                    </a>
+                    <a href="https://dev.to/kenzman" target="_blank" aria-label="Dev.to">
+                        <i class="fab fa-dev"></i>
                     </a>
                 </div>
                 <p class="footer-copy">&copy; 2026 Joseph Ekene Ejike. Built with precision.</p>
