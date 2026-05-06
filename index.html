@@ -4,1050 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Ekene Ejike | Lead Product Security Engineer</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Senior Product Security Engineer specializing in enterprise security architecture, adversarial research, and supply chain hardening.">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+        mermaid.initialize({ startOnLoad: false, theme: 'dark' });
+        window.mermaidAPI = mermaid;
     </script>
-
-    <style>
-        :root {
-            --bg-primary: #0a0e14;
-            --bg-secondary: #13181f;
-            --bg-tertiary: #1a2028;
-            --accent-green: #00ff88;
-            --accent-cyan: #00d9ff;
-            --accent-purple: #a855f7;
-            --text-primary: #e6edf3;
-            --text-secondary: #8b949e;
-            --text-tertiary: #6e7681;
-            --border: #30363d;
-            --font-display: 'Syne', sans-serif;
-            --font-mono: 'IBM Plex Mono', monospace;
-            --font-code: 'Space Mono', monospace;
-            --shadow-glow: 0 0 30px rgba(0, 255, 136, 0.15);
-        }
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-
-        /* Ensure Font Awesome icons display properly */
-        i.fas, i.fab, i.fa {
-            display: inline-block;
-            font-style: normal;
-            font-variant: normal;
-            text-rendering: auto;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body { 
-            font-family: var(--font-mono); 
-            background: var(--bg-primary);
-            color: var(--text-primary); 
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* Animated background grid */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            pointer-events: none;
-            z-index: 0;
-            animation: gridMove 20s linear infinite;
-        }
-
-        @keyframes gridMove {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(40px, 40px); }
-        }
-
-        /* Cursor trail effect */
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            animation: cursorPulse 1s ease-in-out infinite;
-        }
-
-        @keyframes cursorPulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.5); opacity: 0.5; }
-        }
-        
-        .container { 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            padding: 0 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Terminal-style navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 14, 20, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            z-index: 1000;
-            animation: slideDown 0.6s ease-out;
-        }
-
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-brand {
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--accent-green);
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-
-        .nav-brand::before {
-            content: '$ ';
-            color: var(--accent-cyan);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .nav-links a::before {
-            content: '// ';
-            color: var(--accent-green);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-green);
-        }
-
-        .nav-links a:hover::before {
-            opacity: 1;
-        }
-
-        /* Hero section with glitch effect */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 0 80px;
-            position: relative;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            right: 10%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(80px);
-            animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.2); opacity: 0.6; }
-        }
-
-        .hero-content {
-            max-width: 900px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-green);
-            box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease-out both;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 8px 16px;
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid var(--accent-green);
-            border-radius: 4px;
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--accent-green);
-            margin-bottom: 30px;
-            animation: fadeInUp 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
-        }
-
-        .hero h1 {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 30px;
-            letter-spacing: -2px;
-            animation: fadeInUp 0.8s ease-out 0.4s both;
-        }
-
-        .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-            max-width: 700px;
-            line-height: 1.8;
-            animation: fadeInUp 0.8s ease-out 0.6s both;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            animation: fadeInUp 0.8s ease-out 0.8s both;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
-            font-family: var(--font-mono);
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: var(--accent-green);
-            color: var(--bg-primary);
-            border: 2px solid var(--accent-green);
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-green);
-            color: var(--accent-green);
-            transform: translateY(-2px);
-        }
-
-        /* Stats banner */
-        .stats {
-            padding: 60px 0;
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            position: relative;
-        }
-
-        .stats::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 20px;
-            position: relative;
-        }
-
-        .stat-item::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: var(--accent-green);
-            opacity: 0.3;
-        }
-
-        .stat-value {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-tertiary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Section styling */
-        section {
-            padding: 120px 0;
-            position: relative;
-        }
-
-        .section-header {
-            margin-bottom: 80px;
-        }
-
-        .section-tag {
-            font-family: var(--font-code);
-            font-size: 0.75rem;
-            color: var(--accent-cyan);
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: var(--accent-green);
-        }
-
-        /* Case study cards */
-        .case-studies {
-            display: grid;
-            gap: 60px;
-        }
-
-        .case-study {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 50px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .case-study::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(180deg, var(--accent-green), var(--accent-cyan));
-            transform: scaleY(0);
-            transform-origin: top;
-            transition: transform 0.4s ease;
-        }
-
-        .case-study:hover {
-            border-color: rgba(0, 255, 136, 0.3);
-            box-shadow: var(--shadow-glow);
-            transform: translateY(-5px);
-        }
-
-        .case-study:hover::before {
-            transform: scaleY(1);
-        }
-
-        .case-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            background: rgba(0, 255, 136, 0.1);
-            border: 1px solid var(--accent-green);
-            border-radius: 20px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--accent-green);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-        }
-
-        .case-badge i {
-            font-size: 0.9rem;
-            display: inline-block;
-        }
-
-        .case-study h3 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-
-        .case-study-grid {
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 50px;
-            align-items: start;
-            margin-top: 30px;
-        }
-
-        .case-description {
-            color: var(--text-secondary);
-            line-height: 1.9;
-            margin-bottom: 30px;
-        }
-
-        .case-description strong {
-            color: var(--text-primary);
-            font-weight: 600;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 25px;
-        }
-
-        .tech-tag {
-            padding: 6px 14px;
-            background: rgba(0, 217, 255, 0.1);
-            border: 1px solid rgba(0, 217, 255, 0.3);
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: var(--accent-cyan);
-            font-family: var(--font-code);
-            transition: all 0.3s;
-        }
-
-        .tech-tag:hover {
-            background: rgba(0, 217, 255, 0.2);
-            border-color: var(--accent-cyan);
-            transform: translateY(-2px);
-        }
-
-        /* Mermaid diagram styling */
-        .diagram-container {
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 30px;
-            position: relative;
-        }
-
-        .diagram-container::before {
-            content: '[ SYSTEM ARCHITECTURE ]';
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            font-size: 0.65rem;
-            color: var(--text-tertiary);
-            font-family: var(--font-code);
-            letter-spacing: 2px;
-        }
-
-        /* Skills grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 35px;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-
-        .skill-card:hover {
-            border-color: rgba(0, 255, 136, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .skill-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .skill-card h3 {
-            font-family: var(--font-code);
-            font-size: 0.9rem;
-            color: var(--accent-green);
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .skill-card ul {
-            list-style: none;
-        }
-
-        .skill-card li {
-            margin-bottom: 14px;
-            color: var(--text-secondary);
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 0.9rem;
-        }
-
-        .skill-card li::before {
-            content: '▸';
-            color: var(--accent-cyan);
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        /* Experience timeline */
-        .timeline {
-            position: relative;
-            padding-left: 50px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent-green), transparent);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 60px;
-            padding-left: 40px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -50px;
-            top: 5px;
-            width: 12px;
-            height: 12px;
-            background: var(--accent-green);
-            border: 3px solid var(--bg-primary);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(0, 255, 136, 0.2);
-        }
-
-        .timeline-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .timeline-title {
-            font-family: var(--font-display);
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .timeline-company {
-            font-family: var(--font-code);
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-        }
-
-        .timeline-period {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-            font-family: var(--font-code);
-        }
-
-        .timeline-item ul {
-            margin-top: 15px;
-            color: var(--text-secondary);
-        }
-
-        .timeline-item li {
-            margin-bottom: 12px;
-            padding-left: 10px;
-        }
-
-        .timeline-item li strong {
-            color: var(--accent-green);
-            font-weight: 600;
-        }
-
-        /* Project cards */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 35px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-card::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s;
-        }
-
-        .project-card:hover::after {
-            opacity: 1;
-        }
-
-        .project-card:hover {
-            border-color: rgba(0, 255, 136, 0.3);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .project-icon {
-            font-size: 2.5rem;
-            color: var(--accent-green);
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 10;
-            display: block;
-            line-height: 1;
-        }
-
-        .project-icon i {
-            display: inline-block;
-        }
-
-        .project-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 10;
-        }
-
-        .project-card p {
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            color: var(--accent-cyan);
-            text-decoration: none;
-            font-weight: 600;
-            transition: gap 0.3s;
-            position: relative;
-            z-index: 10;
-        }
-
-        .project-link:hover {
-            gap: 12px;
-            color: var(--accent-green);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border);
-            padding: 60px 0 40px;
-            position: relative;
-        }
-
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
-        }
-
-        .footer-content {
-            text-align: center;
-        }
-
-        .footer-tagline {
-            font-family: var(--font-code);
-            font-size: 0.9rem;
-            color: var(--text-tertiary);
-            margin-bottom: 25px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.5rem;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-green);
-            transform: translateY(-3px);
-        }
-
-        .footer-copy {
-            font-size: 0.8rem;
-            color: var(--text-tertiary);
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .case-study-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                gap: 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 25px;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-
-            .hero {
-                padding: 120px 0 60px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .timeline {
-                padding-left: 30px;
-            }
-
-            .timeline-item {
-                padding-left: 25px;
-            }
-
-            .timeline-item::before {
-                left: -30px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-
-            .case-study {
-                padding: 30px;
-            }
-        }
-
-        /* Loading animation */
-        @keyframes shimmer {
-            0% { background-position: -1000px 0; }
-            100% { background-position: 1000px 0; }
-        }
-
-        .loading-shimmer {
-            background: linear-gradient(90deg, transparent 0%, rgba(0, 255, 136, 0.1) 50%, transparent 100%);
-            background-size: 1000px 100%;
-            animation: shimmer 2s infinite;
-        }
-    </style>
 </head>
 <body>
-    <div class="cursor-dot" id="cursorDot"></div>
 
-    <nav>
-        <div class="container">
-            <div class="nav-brand">Joseph.Ekene.Ejike</div>
-            <ul class="nav-links">
-                <li><a href="#architecture">Architecture</a></li>
-                <li><a href="#arsenal">Arsenal</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#leadership">Leadership</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav>
+    <div class="container">
+        <div class="nav-brand">Joseph Ekene<span>.</span></div>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#arsenal">Arsenal</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <section class="hero">
-        <div class="container">
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
             <div class="hero-content">
-                <img src="Profile.jpg" alt="Joseph Ekene Ejike" class="profile-img">
-                <div class="hero-tag">[ SENIOR PRODUCT SECURITY ENGINEER ]</div>
-                <h1>
-                    Building Security at<br>
-                    <span class="highlight">Enterprise Scale</span>
-                </h1>
-                <p class="hero-subtitle">
-                    I architect resilient security control planes that combine adversarial thinking with 
-                    systems engineering discipline. From zero-CVE runtime factories to automated identity 
-                    lifecycle management—I build the defensive infrastructure that keeps critical systems secure.
-                </p>
+                <div class="hero-tag">SENIOR PRODUCT SECURITY ENGINEER</div>
+                <h1>Building Security at<br><span class="highlight">Enterprise Scale</span></h1>
+                <p class="hero-subtitle">I architect resilient security control planes that combine adversarial thinking with systems engineering discipline. From zero-CVE runtime factories to automated identity lifecycle management—I build the defensive infrastructure that keeps critical systems secure.</p>
                 <div class="hero-cta">
-                    <a href="#architecture" class="btn btn-primary">
-                        <i class="fas fa-code"></i>
-                        View Architecture
-                    </a>
-                    <a href="mailto:ekeneejike@gmail.com" class="btn btn-secondary">
-                        <i class="fas fa-envelope-open"></i>
-                        Get in Touch
-                    </a>
+                    <a href="#architecture" class="btn btn-primary"><i class="fas fa-code"></i> View Architecture</a>
+                    <a href="mailto:ekeneejike@gmail.com" class="btn btn-secondary"><i class="fas fa-envelope-open"></i> Get in Touch</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <div class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-value">0</div>
-                    <div class="stat-label">Critical Base Image CVEs at Build Time</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">150K+</div>
-                    <div class="stat-label">Nodes Analyzed in <30s</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Supply Chain Provenance</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-value">50+</div>
-                    <div class="stat-label">Engineers Mentored</div>
+            <div class="profile-card">
+                <div class="profile-card-inner">
+                    <img src="Profile.jpg" alt="Joseph Ekene Ejike" class="profile-img">
+                    <div class="profile-name">Joseph Ekene Ejike</div>
+                    <div class="profile-role">Lead Product Security Engineer</div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <section id="architecture">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// SYSTEM DESIGN</span>
-                <h2 class="section-title">Architectural Case Studies</h2>
+<div class="stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item reveal">
+                <div class="stat-value" data-target="0">0</div>
+                <div class="stat-label">Critical Base Image CVEs at Build Time</div>
             </div>
+            <div class="stat-item reveal">
+                <div class="stat-value">150K+</div>
+                <div class="stat-label">Nodes Analyzed in &lt;30s</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Supply Chain Provenance</div>
+            </div>
+            <div class="stat-item reveal">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Engineers Mentored</div>
+            </div>
+        </div>
+    </div>
+</div>
 
-            <div class="case-studies">
-                <div class="case-study">
-                    <div class="case-badge">
-                        <i class="fas fa-shield-virus"></i>
-                        ZERO-CVE RUNTIME BASE IMMAGE GUARANTEE
-                    </div>
-                    <h3>Project NetShield: Multi-Arch Hardened Runtimes</h3>
-                    
-                    <div class="case-study-grid">
-                        <div>
-                            <p class="case-description">
-                                <strong>The Problem:</strong> Public base images often carry stale vulnerabilities or lack provenance, creating an insecure foundation for high-volume financial APIs.
-                                <br><br>
-                                <strong>The Architecture:</strong> Engineered a "Shift-Left" factory using Wolfi (Undistro) and apko. I implemented a parallel GitHub Matrix strategy to independently build, scan (Trivy), and sign (Cosign) AMD64 and ARM64 images.
-                                <br><br>
-                                <strong>Impact:</strong> Achieved zero critical vulnerabilities in production runtime base images while maintaining full supply chain transparency through cryptographic signatures.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Wolfi</span>
-                                <span class="tech-tag">apko</span>
-                                <span class="tech-tag">Cosign</span>
-                                <span class="tech-tag">Trivy</span>
-                                <span class="tech-tag">GitHub Actions</span>
-                            </div>
+<section id="architecture">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">System Design</span>
+            <h2 class="section-title">Architectural Case Studies</h2>
+        </div>
+        <div class="case-studies">
+
+            <div class="case-study reveal">
+                <span class="case-number">01</span>
+                <div class="case-badge"><i class="fas fa-shield-virus"></i> ZERO-CVE RUNTIME GUARANTEE</div>
+                <h3>Project NetShield: Multi-Arch Hardened Runtimes</h3>
+                <div class="case-study-content">
+                    <div>
+                        <p class="case-description"><strong>The Problem:</strong> Public base images often carry stale vulnerabilities or lack provenance, creating an insecure foundation for high-volume financial APIs.<br><br><strong>The Architecture:</strong> Engineered a "Shift-Left" factory using Wolfi (Undistro) and apko. I implemented a parallel GitHub Matrix strategy to independently build, scan (Trivy), and sign (Cosign) AMD64 and ARM64 images.<br><br><strong>Impact:</strong> Achieved zero critical vulnerabilities in production runtime base images while maintaining full supply chain transparency through cryptographic signatures.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Wolfi</span><span class="tech-tag">apko</span><span class="tech-tag">Cosign</span><span class="tech-tag">Trivy</span><span class="tech-tag">GitHub Actions</span>
                         </div>
-                        <div class="diagram-container">
-                            <pre class="mermaid">
+                        <button class="diagram-toggle" onclick="toggleDiagram(this)"><i class="fas fa-project-diagram"></i> View Architecture Diagram <span class="arrow">▼</span></button>
+                    </div>
+                </div>
+                <div class="diagram-container">
+                    <pre class="mermaid">
 graph TD
     A[apko Build] --> B{Parallel Scan}
     B -- AMD64 --> C[Trivy x86]
     B -- ARM64 --> D[Trivy arm]
     C & D -- Pass --> E[Push & Sign]
     E --> F[Verified Gold Image]
-    style F fill:#064e3b,stroke:#34d399
-                            </pre>
+    style F fill:#312e81,stroke:#818cf8
+                    </pre>
+                </div>
+            </div>
+
+            <div class="case-study reveal">
+                <span class="case-number">02</span>
+                <div class="case-badge"><i class="fas fa-server"></i> ENTERPRISE STANDARD</div>
+                <h3>The Enterprise "Golden Pipeline" Standard</h3>
+                <div class="case-study-content">
+                    <div>
+                        <p class="case-description"><strong>The Challenge:</strong> Fragmented deployment processes led to unverified dependencies and base image staleness entering production across multiple teams.<br><br><strong>The Solution:</strong> Standardized product delivery for a major financial group by architecting a unified control plane in Google Artifact Registry. Enforced dependency proxying, automated rebuild triggers, and image provenance via Cosign.<br><br><strong>Impact:</strong> Reduced time-to-production by 60% while ensuring 100% artifact verification across all deployments.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">GCP Artifact Registry</span><span class="tech-tag">Okta Workflows</span><span class="tech-tag">Snyk</span><span class="tech-tag">Terraform</span>
                         </div>
+                        <button class="diagram-toggle" onclick="toggleDiagram(this)"><i class="fas fa-project-diagram"></i> View Architecture Diagram <span class="arrow">▼</span></button>
                     </div>
                 </div>
-
-                <div class="case-study">
-                    <div class="case-badge">
-                        <i class="fas fa-server"></i>
-                        ENTERPRISE STANDARD
-                    </div>
-                    <h3>The Enterprise "Golden Pipeline" Standard</h3>
-                    
-                    <div class="case-study-grid">
-                        <div>
-                            <p class="case-description">
-                                <strong>The Challenge:</strong> Fragmented deployment processes led to unverified dependencies and base image staleness entering production across multiple teams.
-                                <br><br>
-                                <strong>The Solution:</strong> Standardized product delivery for a major financial group by architecting a unified control plane in Google Artifact Registry. Enforced dependency proxying, automated rebuild triggers, and image provenance via Cosign.
-                                <br><br>
-                                <strong>Impact:</strong> Reduced time-to-production by 60% while ensuring 100% artifact verification across all deployments.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">GCP Artifact Registry</span>
-                                <span class="tech-tag">Okta Workflows</span>
-                                <span class="tech-tag">Snyk</span>
-                                <span class="tech-tag">Terraform</span>
-                            </div>
-                        </div>
-                        <div class="diagram-container">
-                            <pre class="mermaid">
+                <div class="diagram-container">
+                    <pre class="mermaid">
 graph TD
     A[Development Teams] --> B[Source Control]
     B --> C{Golden Pipeline}
@@ -1056,410 +135,355 @@ graph TD
     C --> F[Image Signing]
     D & E & F --> G[Artifact Registry]
     G --> H[Verified Production]
-    style G fill:#064e3b,stroke:#34d399
-    style H fill:#064e3b,stroke:#34d399
-                            </pre>
+    style G fill:#312e81,stroke:#818cf8
+    style H fill:#312e81,stroke:#818cf8
+                    </pre>
+                </div>
+            </div>
+
+            <div class="case-study reveal">
+                <span class="case-number">03</span>
+                <div class="case-badge"><i class="fas fa-robot"></i> ZERO-TOUCH AUTOMATION</div>
+                <h3>Zero-Touch Identity & Access Automation</h3>
+                <div class="case-study-content">
+                    <div>
+                        <p class="case-description"><strong>The Challenge:</strong> Manual onboarding created "ghost accounts" and delayed access revocation by up to 48 hours, risking compliance failures and unauthorized access.<br><br><strong>The Solution:</strong> Engineered a fully automated lifecycle using Jira Service Management, Okta Workflows, and JumpCloud. Access is granted based on Role (RBAC) and revoked instantly upon contract termination.<br><br><strong>Impact:</strong> Eliminated ghost accounts and reduced offboarding time from 48 hours to under 5 minutes.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Okta Workflows</span><span class="tech-tag">Jira Automation</span><span class="tech-tag">JumpCloud</span><span class="tech-tag">Python</span>
                         </div>
+                        <button class="diagram-toggle" onclick="toggleDiagram(this)"><i class="fas fa-project-diagram"></i> View Architecture Diagram <span class="arrow">▼</span></button>
                     </div>
                 </div>
-
-                <div class="case-study">
-                    <div class="case-badge">
-                        <i class="fas fa-robot"></i>
-                        ZERO-TOUCH AUTOMATION
-                    </div>
-                    <h3>Zero-Touch Identity & Access Automation</h3>
-                    
-                    <div class="case-study-grid">
-                        <div class="diagram-container">
-                            <pre class="mermaid">
+                <div class="diagram-container">
+                    <pre class="mermaid">
 graph TD
     HR[Jira Service Mgmt] -->|Webhook| Okta[Okta Workflows]
     Okta -->|Onboard| Prov[Provision AWS & JumpCloud]
     Okta -->|Offboard| Kill[Revoke Sessions & Lock Device]
     style Kill fill:#7f1d1d,stroke:#fff
-                            </pre>
+                    </pre>
+                </div>
+            </div>
+
+            <div class="case-study reveal">
+                <span class="case-number">04</span>
+                <div class="case-badge"><i class="fas fa-mobile-alt"></i> ADVERSARIAL RESEARCH</div>
+                <h3>NetShield: Automated Mobile SSL Bypass Suite</h3>
+                <div class="case-study-content">
+                    <div>
+                        <p class="case-description"><strong>The Challenge:</strong> Modern apps use native SSL implementations (BoringSSL) that evade standard interception tools.<br><br><strong>The Solution:</strong> Built an orchestration engine that combines static pattern matching with Frida-based runtime instrumentation to bypass pinning in Flutter, OkHttp, and custom TrustManagers.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Frida</span><span class="tech-tag">BoringSSL</span><span class="tech-tag">Python</span><span class="tech-tag">Reverse Engineering</span>
                         </div>
-                        <div>
-                            <p class="case-description">
-                                <strong>The Challenge:</strong> Manual onboarding created "ghost accounts" and delayed access revocation by up to 48 hours, risking compliance failures and unauthorized access.
-                                <br><br>
-                                <strong>The Solution:</strong> Engineered a fully automated lifecycle using Jira Service Management, Okta Workflows, and JumpCloud. Access is granted based on Role (RBAC) and revoked instantly upon contract termination.
-                                <br><br>
-                                <strong>Impact:</strong> Eliminated ghost accounts and reduced offboarding time from 48 hours to under 5 minutes.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Okta Workflows</span>
-                                <span class="tech-tag">Jira Automation</span>
-                                <span class="tech-tag">JumpCloud</span>
-                                <span class="tech-tag">Python</span>
-                            </div>
-                        </div>
+                        <button class="diagram-toggle" onclick="toggleDiagram(this)"><i class="fas fa-project-diagram"></i> View Architecture Diagram <span class="arrow">▼</span></button>
                     </div>
                 </div>
-
-                <div class="case-study">
-                    <div class="case-badge"><i class="fas fa-mobile-alt"></i> ADVERSARIAL RESEARCH</div>
-                    <h3>NetShield: Automated Mobile SSL Bypass Suite</h3>
-                    <div class="case-study-grid">
-                        <div class="diagram-container">
-                            <pre class="mermaid">
+                <div class="diagram-container">
+                    <pre class="mermaid">
 graph TD
     A[Target APK] --> B{Static Detection}
     B -- Flutter --> C[Native Hook libflutter]
     B -- Java --> D[Hook TrustManager]
     C & D --> E[Runtime Bypass via Frida]
     E --> F[Intercept Encrypted Traffic]
-                            </pre>
-                        </div>
-                        <div>
-                            <p class="case-description">
-                                <strong>The Challenge:</strong> Modern apps use native SSL implementations (BoringSSL) that evade standard interception tools.
-                                <br><br>
-                                <strong>The Solution:</strong> Built an orchestration engine that combines static pattern matching with Frida-based runtime instrumentation to bypass pinning in Flutter, OkHttp, and custom TrustManagers.
-                            </p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">Frida</span>
-                                <span class="tech-tag">BoringSSL</span>
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">Reverse Engineering</span>
-                            </div>
-                        </div>
+                    </pre>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="arsenal">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">Technical Capabilities</span>
+            <h2 class="section-title">Technical Arsenal</h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-icon"><i class="fas fa-crosshairs"></i></div>
+                <h3>Offensive Security</h3>
+                <ul>
+                    <li>Web/API: Burp Suite Pro, OWASP ZAP</li>
+                    <li>Mobile: Frida, Objection, Jadx-GUI</li>
+                    <li>Network Recon: Nmap, Wireshark</li>
+                    <li>Exploit Development: Python & Bash</li>
+                </ul>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud & Hardening</h3>
+                <ul>
+                    <li>AWS Security Hub & GuardDuty</li>
+                    <li>Wolfi (Undistro) & apko Hardening</li>
+                    <li>Docker & Kubernetes Security</li>
+                    <li>Terraform (IaC) & Linux Hardening</li>
+                </ul>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon"><i class="fas fa-link"></i></div>
+                <h3>AppSec & Supply Chain</h3>
+                <ul>
+                    <li>Artifact Registry Governance</li>
+                    <li>Snyk, Checkmarx, SonarQube</li>
+                    <li>Sigstore/Cosign Provenance</li>
+                    <li>GitHub Advanced Security</li>
+                </ul>
+            </div>
+            <div class="skill-card reveal">
+                <div class="skill-icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Governance & Identity</h3>
+                <ul>
+                    <li>ISO 27001 & PCI DSS Compliance</li>
+                    <li>Zero Trust (Okta/JumpCloud)</li>
+                    <li>RBAC Design & Policy Enforcement</li>
+                    <li>Incident Response & Forensics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">Career Timeline</span>
+            <h2 class="section-title">Professional Experience</h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Lead Product Security Engineer</div>
+                        <div class="timeline-company">Tier-1 Financial Holding Company</div>
                     </div>
+                    <div class="timeline-period">2024 — Present</div>
+                </div>
+                <ul>
+                    <li><strong>Adversarial Research:</strong> Led grey-box assessments on flagship banking platforms, uncovering critical Race Conditions and IDOR-based Account Takeovers.</li>
+                    <li><strong>Standardization:</strong> Designed the "Golden Pipeline" for Payment APIs, ensuring 100% of artifacts are signed and scanned before deployment.</li>
+                    <li><strong>Mentorship:</strong> Built security champion program training 30+ engineers on secure coding practices and threat modeling.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Application Security Engineer</div>
+                        <div class="timeline-company">Tier-1 Commercial Bank</div>
+                    </div>
+                    <div class="timeline-period">2023 — 2024</div>
+                </div>
+                <ul>
+                    <li><strong>API Protection:</strong> Discovered critical Refresh Token Hijacking and auth bypass scenarios on corporate endpoints serving 2M+ users.</li>
+                    <li><strong>Security Gates:</strong> Integrated automated SAST/DAST into CI/CD, reducing production vulnerability delta by 40%.</li>
+                    <li><strong>Compliance:</strong> Led PCI DSS certification efforts for payment processing infrastructure.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Cybersecurity Instructor & Mentor</div>
+                        <div class="timeline-company">10Alytics</div>
+                    </div>
+                    <div class="timeline-period">2024 — 2025</div>
+                </div>
+                <ul>
+                    <li>Designed hands-on labs for Wazuh SIEM architecture and Incident Response workflows.</li>
+                    <li>Mentored 50+ students in transitioning to professional security roles with 85% placement rate.</li>
+                </ul>
+            </div>
+            <div class="timeline-item reveal">
+                <div class="timeline-header">
+                    <div>
+                        <div class="timeline-title">Technical Support Engineer (L3)</div>
+                        <div class="timeline-company">Enterprise Software Firm</div>
+                    </div>
+                    <div class="timeline-period">2021 — 2023</div>
+                </div>
+                <ul>
+                    <li>Managed enterprise NNMi clusters and platform upgrades for Fortune 500 clients.</li>
+                    <li>Supported Kubernetes security compliance for large-scale container deployments.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">Open Source</span>
+            <h2 class="section-title">Projects & Research</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>NetShield Hardened Images</h3>
+                <p>Hardened, 0-CVE runtime multi-arch base images built with Wolfi/apko and cryptographically signed with Cosign for supply chain verification.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Ekene95/secops-base-images" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub →</a>
+                    <a href="https://hub.docker.com/u/kenzman" class="project-link" target="_blank"><i class="fab fa-docker"></i> Registry →</a>
+                    <a href="https://dev.to/kenzman/from-base-images-to-runtime-factories-eliminating-sca-noise-with-event-driven-rebuilds-3egm" class="project-link" target="_blank"><i class="fab fa-dev"></i> Article →</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fab fa-linux"></i></div>
+                <h3>Threat Hunting with Wazuh</h3>
+                <p>Combining Wazuh File Integrity Monitoring with Yara rules for proactive threat detection on Linux endpoints.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@ekeneejike/threat-hunting-with-wazuh-fim-and-yara-on-linux-endpoints-cf8f5b84ae6e" class="project-link" target="_blank"><i class="fab fa-medium"></i> Read Article →</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-terminal"></i></div>
+                <h3>Bash Log Analyzer</h3>
+                <p>Automated script for parsing authentication logs, detecting anomalies, and performing geolocation analysis on failed login attempts.</p>
+                <div class="project-links">
+                    <a href="https://medium.com/@ekeneejike/simple-bash-script-for-log-analysis-db003dd9be" class="project-link" target="_blank"><i class="fab fa-medium"></i> View Code →</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Network Vulnerability Scanner</h3>
+                <p>Bash-based network mapper and service identifier for rapid security assessments and reconnaissance.</p>
+                <div class="project-links">
+                    <a href="https://www.youtube.com/watch?v=LWZckCdFH1I&t=182s" class="project-link" target="_blank"><i class="fab fa-youtube"></i> Watch Demo →</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fab fa-docker"></i></div>
+                <h3>Kubernetes Operations Guide</h3>
+                <p>Technical series on optimizing K8s log analysis, deployment management, and security hardening using modern tooling.</p>
+                <div class="project-links">
+                    <a href="https://www.warp.dev/terminus/kubectl-get-logs" class="project-link" target="_blank"><i class="fas fa-terminal"></i> Kube Logs →</a>
+                    <a href="https://www.warp.dev/terminus/delete-kubernetes-deployments-with-kubectl" class="project-link" target="_blank"><i class="fas fa-terminal"></i> Kube Delete →</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                <h3>AWS Cloud Architecture Workshop</h3>
+                <p>Delivered technical workshops on ECS Fargate, RDS security, and Docker Hub integration patterns for scalable workloads.</p>
+                <div class="project-links">
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350511119863574529/" class="project-link" target="_blank"><i class="fab fa-linkedin"></i> View Workshop →</a>
+                </div>
+            </div>
+            <div class="project-card featured reveal">
+                <div class="project-icon"><i class="fas fa-microscope"></i></div>
+                <h3>NetShield Analyzer (Java)</h3>
+                <p>A static analysis engine designed to solve SCA "noise." Successfully mapped 158K+ call graph nodes in &lt;30s during benchmarks, identifying reachable vs. unreachable vulnerabilities.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Netshield-Enterprise/netshield-analyzer" class="project-link" target="_blank"><i class="fab fa-github"></i> GitHub →</a>
+                    <a href="https://dev.to/kenzman/39-cves-in-webgoat-only-36-were-reachable-3i6m" class="project-link" target="_blank"><i class="fab fa-dev"></i> Technical Research →</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-network-wired"></i></div>
+                <h3>Banking Infrastructure Lab</h3>
+                <p>A full-scale Kubernetes-based simulation of a banking environment designed for validating zero-trust architectures and simulating multi-stage attack vectors.</p>
+                <div class="project-links">
+                    <a href="https://github.com/Commando-X/vuln-bank-devsecops/pull/14" class="project-link" target="_blank"><i class="fas fa-code-branch"></i> View Contribution →</a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="arsenal">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// TECHNICAL CAPABILITIES</span>
-                <h2 class="section-title">Technical Arsenal</h2>
+<section id="leadership">
+    <div class="container">
+        <div class="section-header reveal">
+            <span class="section-tag">Thought Leadership</span>
+            <h2 class="section-title">Speaking & Mentorship</h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-microphone"></i></div>
+                <h3>ISC2 Nigeria Chapter</h3>
+                <p>Delivered "Threat Modeling for Complex Ecosystems," teaching architectural security to certified practitioners.</p>
+                <div class="project-links"><span class="tech-tag">CPE Provider</span></div>
             </div>
-
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>OFFENSIVE SECURITY</h3>
-                    <ul>
-                        <li>Web/API: Burp Suite Pro, OWASP ZAP</li>
-                        <li>Mobile: Frida, Objection, Jadx-GUI</li>
-                        <li>Network Recon: Nmap, Wireshark</li>
-                        <li>Exploit Development: Python & Bash</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <h3>CLOUD & HARDENING</h3>
-                    <ul>
-                        <li>AWS Security Hub & GuardDuty</li>
-                        <li>Wolfi (Undistro) & apko Hardening</li>
-                        <li>Docker & Kubernetes Security</li>
-                        <li>Terraform (IaC) & Linux Hardening</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <h3>APPSEC & SUPPLY CHAIN</h3>
-                    <ul>
-                        <li>Artifact Registry Governance</li>
-                        <li>Snyk, Checkmarx, SonarQube</li>
-                        <li>Sigstore/Cosign Provenance</li>
-                        <li>GitHub Advanced Security</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <h3>GOVERNANCE & IDENTITY</h3>
-                    <ul>
-                        <li>ISO 27001 & PCI DSS Compliance</li>
-                        <li>Zero Trust (Okta/JumpCloud)</li>
-                        <li>RBAC Design & Policy Enforcement</li>
-                        <li>Incident Response & Forensics</li>
-                    </ul>
-                </div>
+            <div class="project-card reveal">
+                <div class="project-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                <h3>ISACA Lagos Boot Camp</h3>
+                <p>Instructor for a 2-part Offensive Security series using the "Banking Infrastructure Lab" to train professionals on multi-stage attack vectors and zero-trust validation.</p>
+                <div class="project-links"><span class="tech-tag">SME Training</span></div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// CAREER TIMELINE</span>
-                <h2 class="section-title">Professional Experience</h2>
-            </div>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">Lead Product Security Engineer</div>
-                            <div class="timeline-company">Tier-1 Financial Holding Company</div>
-                        </div>
-                        <div class="timeline-period">2024 - Present</div>
-                    </div>
-                    <ul>
-                        <li><strong>Adversarial Research:</strong> Led grey-box assessments on flagship banking platforms, uncovering critical Race Conditions and IDOR-based Account Takeovers.</li>
-                        <li><strong>Standardization:</strong> Designed the "Golden Pipeline" for Payment APIs, ensuring 100% of artifacts are signed and scanned before deployment.</li>
-                        <li><strong>Mentorship:</strong> Built security champion program training 30+ engineers on secure coding practices and threat modeling.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">Application Security Engineer</div>
-                            <div class="timeline-company">Tier-1 Commercial Bank</div>
-                        </div>
-                        <div class="timeline-period">2023 - 2024</div>
-                    </div>
-                    <ul>
-                        <li><strong>API Protection:</strong> Discovered critical Refresh Token Hijacking and auth bypass scenarios on corporate endpoints serving 2M+ users.</li>
-                        <li><strong>Security Gates:</strong> Integrated automated SAST/DAST into CI/CD, reducing production vulnerability delta by 40%.</li>
-                        <li><strong>Compliance:</strong> Led PCI DSS certification efforts for payment processing infrastructure.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">Cybersecurity Instructor & Mentor</div>
-                            <div class="timeline-company">10Alytics</div>
-                        </div>
-                        <div class="timeline-period">2024 - 2025</div>
-                    </div>
-                    <ul>
-                        <li>Designed hands-on labs for Wazuh SIEM architecture and Incident Response workflows.</li>
-                        <li>Mentored 50+ students in transitioning to professional security roles with 85% placement rate.</li>
-                    </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">Technical Support Engineer (L3)</div>
-                            <div class="timeline-company">Enterprise Software Firm</div>
-                        </div>
-                        <div class="timeline-period">2021 - 2023</div>
-                    </div>
-                    <ul>
-                        <li>Managed enterprise NNMi clusters and platform upgrades for Fortune 500 clients.</li>
-                        <li>Supported Kubernetes security compliance for large-scale container deployments.</li>
-                    </ul>
-                </div>
-            </div>
+<section class="cta-section" id="contact">
+    <div class="container">
+        <div class="cta-box reveal">
+            <h2>Let's build something secure.</h2>
+            <p>Interested in collaborating on security architecture, adversarial research, or DevSecOps strategy? Let's connect.</p>
+            <a href="mailto:ekeneejike@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in Touch</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// OPEN SOURCE</span>
-                <h2 class="section-title">Projects & Research</h2>
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p class="footer-tagline">Defensive Systems. Offensive Mindset.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/ekene-joseph-ejike" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/Ekene95" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:ekeneejike@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://medium.com/@ekeneejike" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                <a href="https://dev.to/kenzman" target="_blank" aria-label="Dev.to"><i class="fab fa-dev"></i></a>
             </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>NetShield Hardened Images</h3>
-                    <p>Hardened, 0-CVE runtime multi-arch base images built with Wolfi/apko and cryptographically signed with Cosign for supply chain verification.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://github.com/Ekene95/secops-base-images" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://hub.docker.com/u/kenzman" class="project-link" target="_blank">
-                            <i class="fab fa-docker"></i> Registry <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://dev.to/kenzman/from-base-images-to-runtime-factories-eliminating-sca-noise-with-event-driven-rebuilds-3egm" class="project-link" target="_blank">
-                            <i class="fab fa-dev"></i> Article <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fab fa-linux"></i>
-                    </div>
-                    <h3>Threat Hunting with Wazuh</h3>
-                    <p>Combining Wazuh File Integrity Monitoring with Yara rules for proactive threat detection on Linux endpoints.</p>
-                    <a href="https://medium.com/@ekeneejike/threat-hunting-with-wazuh-fim-and-yara-on-linux-endpoints-cf8f5b84ae6e" class="project-link" target="_blank">
-                        <i class="fab fa-medium"></i> Read Article <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-terminal"></i>
-                    </div>
-                    <h3>Bash Log Analyzer</h3>
-                    <p>Automated script for parsing authentication logs, detecting anomalies, and performing geolocation analysis on failed login attempts.</p>
-                    <a href="https://medium.com/@ekeneejike/simple-bash-script-for-log-analysis-db003dd9be" class="project-link" target="_blank">
-                       <i class="fab fa-medium"></i> View Code <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Network Vulnerability Scanner</h3>
-                    <p>Bash-based network mapper and service identifier for rapid security assessments and reconnaissance.</p>
-                    <a href="https://www.youtube.com/watch?v=LWZckCdFH1I&t=182s" class="project-link" target="_blank">
-                       <i class="fab fa-youtube"></i> Watch Demo <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fab fa-docker"></i>
-                    </div>
-                    <h3>Kubernetes Operations Guide</h3>
-                    <p>Technical series on optimizing K8s log analysis, deployment management, and security hardening using modern tooling.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://www.warp.dev/terminus/kubectl-get-logs" class="project-link" target="_blank">
-                           <i class="fab fa-terminal"></i> Kube Logs <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://www.warp.dev/terminus/delete-kubernetes-deployments-with-kubectl" class="project-link" target="_blank">
-                           <i class="fab fa-terminal"></i> Kube Delete <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>AWS Cloud Architecture Workshop</h3>
-                    <p>Delivered technical workshops on ECS Fargate, RDS security, and Docker Hub integration patterns for scalable workloads.</p>
-                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350511119863574529/" class="project-link" target="_blank">
-                       <i class="fab fa-linkedin"></i> View Workshop <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-
-                <div class="project-card" style="border-color: var(--accent-cyan);">
-                    <div class="project-icon">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3>NetShield Analyzer (Java)</h3>
-                    <p>A static analysis engine designed to solve SCA "noise." Successfully mapped 158K+ call graph nodes in <30s during benchmarks, identifying reachable vs. unreachable vulnerabilities.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://github.com/Netshield-Enterprise/netshield-analyzer" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://dev.to/kenzman/39-cves-in-webgoat-only-36-were-reachable-3i6m" class="project-link" target="_blank">
-                            <i class="fab fa-dev"></i> Technical Research <i class="fas fa-arrow-right"></i> 
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Banking Infrastructure Lab</h3>
-                    <p>A full-scale Kubernetes-based simulation of a banking environment designed for validating zero-trust architectures and simulating multi-stage attack vectors.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a href="https://github.com/Commando-X/vuln-bank-devsecops/pull/14" class="project-link" target="_blank">
-                            <i class="fas fa-code-branch"></i> View Contribution <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <p class="footer-copy">&copy; 2026 Joseph Ekene Ejike. Built with precision.</p>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <section id="leadership">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">// THOUGHT LEADERSHIP</span>
-                <h2 class="section-title">Speaking & Mentorship</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-microphone"></i></div>
-                    <h3>ISC2 Nigeria Chapter</h3>
-                    <p>Delivered "Threat Modeling for Complex Ecosystems," teaching architectural security to certified practitioners.</p>
-                    <span class="tech-tag">CPE Provider</span>
-                </div>
-                <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h3>ISACA Lagos Boot Camp</h3>
-                    <p>Instructor for a 2-part Offensive Security series using the "Banking Infrastructure Lab" to train professionals on multi-stage attack vectors and zero-trust validation.</p>
-                    <span class="tech-tag">SME Training</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<script>
+// Mobile nav toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('open');
+    });
+});
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <p class="footer-tagline">$ echo "Defensive Systems. Offensive Mindset."</p>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/ekene-joseph-ejike" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/Ekene95" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:ekeneejike@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://medium.com/@ekeneejike" target="_blank" aria-label="Medium">
-                        <i class="fab fa-medium"></i>
-                    </a>
-                    <a href="https://dev.to/kenzman" target="_blank" aria-label="Dev.to">
-                        <i class="fab fa-dev"></i>
-                    </a>
-                </div>
-                <p class="footer-copy">&copy; 2026 Joseph Ekene Ejike. Built with precision.</p>
-            </div>
-        </div>
-    </footer>
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-    <script>
-        // Custom cursor trail effect
-        const cursorDot = document.getElementById('cursorDot');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursorDot.style.left = e.clientX + 'px';
-            cursorDot.style.top = e.clientY + 'px';
-        });
+// Diagram accordion
+function toggleDiagram(btn) {
+    const container = btn.closest('.case-study').querySelector('.diagram-container');
+    const isOpen = container.classList.contains('open');
+    btn.classList.toggle('active');
+    container.classList.toggle('open');
+    if (!isOpen && container.querySelector('.mermaid')) {
+        const pre = container.querySelector('.mermaid');
+        if (!pre.dataset.rendered) {
+            pre.dataset.rendered = 'true';
+            window.mermaidAPI.run({ nodes: [pre] });
+        }
+    }
+}
 
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scroll reveal animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all case studies, skill cards, and project cards
-        document.querySelectorAll('.case-study, .skill-card, .project-card, .timeline-item').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
+// Nav background on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)';
+});
+</script>
 </body>
 </html>
