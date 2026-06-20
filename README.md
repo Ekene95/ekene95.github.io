@@ -24,7 +24,7 @@ The portfolio is designed as a stateless, high-performance web presence with int
 |---|---------|-------|
 | 01 | **The Runtime Factory** | Event-driven supply chain with SLSA L3 provenance, apko/Wolfi |
 | 02 | **Zero-Touch Identity & Access Automation** | Automated IAM lifecycle with Okta Workflows & JumpCloud |
-| 03 | **Morag v2** | Universal Flutter cryptography interceptor (AOT + Blutter) |
+| 03 | **Morag** | Universal Flutter cryptography interceptor (AOT + Blutter) |
 | 04 | **SSL Unpinner Pro** | Rootless SSL pinning bypass with SARIF/OWASP MASVS mapping |
 | 05 | **NetShield: Automated Mobile SSL Bypass Suite** | Frida-based runtime instrumentation for mobile app security testing |
 | 06 | **NetShield Reachability Analyzer** | Call-graph driven SCA noise reduction |
@@ -34,7 +34,7 @@ The portfolio is designed as a stateless, high-performance web presence with int
 ## Projects & Research
 
 - **Runtime Factory** — Event-driven container security engine with SLSA L3 provenance
-- **Morag v2** — Automated binary analysis for AOT-compiled Flutter applications
+- **Morag** — Automated binary analysis for AOT-compiled Flutter applications
 - **SSL Unpinner Pro** — Rootless SSL pinning bypass with CI/CD SARIF reporting
 - **NetShield Reachability Analyzer** — Call-graph driven SCA to eliminate false positives
 - **NetShield SSL Bypass Suite** — Frida-based evaluation engine for mobile SSL pinning
