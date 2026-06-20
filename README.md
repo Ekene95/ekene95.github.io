@@ -6,18 +6,6 @@ This repository hosts my professional portfolio, showcasing the intersection of 
 
 ---
 
-## Architectural Overview
-
-The portfolio is designed as a stateless, high-performance web presence with interactive data-driven visualizations.
-
-### Core Tech Stack:
-- **Frontend:** HTML5, CSS3 (Custom Properties), Inter/JetBrains Mono Typography.
-- **Logic Visualization:** Mermaid.js (Architecture-as-Code with accordion diagrams).
-- **Interactivity:** Animated counters, scroll-triggered reveals, mouse-tracked card effects.
-- **Deployment:** GitHub Pages via GitHub Actions.
-
----
-
 ## Featured Case Studies
 
 | # | Project | Focus |
