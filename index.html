@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Ekene Ejike | Senior Product Security Engineer</title>
+    <title>Joseph Ekene Ejike | Product Security Engineering</title>
     <meta name="description"
-        content="Senior Product Security Engineer specializing in enterprise security architecture, adversarial research, and supply chain hardening.">
+        content="Product Security Engineer specializing in supply chain security, adversarial research, and binary analysis. Building the defensive infrastructure that keeps critical systems secure.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -22,7 +22,7 @@
 
     <nav>
         <div class="container">
-            <div class="nav-brand">Joseph Ekene<span>.</span></div>
+            <div class="nav-brand">Joseph Ekene Ejike<span>.</span></div>
             <button class="nav-toggle" id="navToggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
@@ -41,12 +41,12 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-tag">SENIOR PRODUCT SECURITY ENGINEER</div>
-                    <h1>Building Security at<br><span class="highlight">Enterprise Scale</span></h1>
-                    <p class="hero-subtitle">I architect resilient security control planes that combine adversarial
-                        thinking with systems engineering discipline. From zero-CVE runtime factories to automated
-                        identity lifecycle management—I build the defensive infrastructure that keeps critical systems
-                        secure.</p>
+                    <div class="hero-tag">PRINCIPAL TRACK — PRODUCT SECURITY ENGINEER</div>
+                    <h1>Shipping Security at<br><span class="highlight">Infrastructure Scale</span></h1>
+                    <p class="hero-subtitle">I build automated security control planes that combine deep binary analysis
+                        with systems engineering discipline. From event-driven supply chain factories to universal Flutter
+                        cryptography interceptors. I engineer the defensive infrastructure that sets enterprise-wide
+                        standards.</p>
                     <div class="hero-cta">
                         <a href="#architecture" class="btn btn-primary"><i class="fas fa-code"></i> View
                             Architecture</a>
@@ -58,7 +58,7 @@
                     <div class="profile-card-inner">
                         <img src="Profile.jpg" alt="Joseph Ekene Ejike" class="profile-img">
                         <div class="profile-name">Joseph Ekene Ejike</div>
-                        <div class="profile-role">Senior Product Security Engineer</div>
+                        <div class="profile-role">Sr. Application Security Engineer</div>
                     </div>
                 </div>
             </div>
@@ -69,20 +69,20 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item reveal">
-                    <div class="stat-value" data-target="0">0</div>
-                    <div class="stat-label">Critical Base Image CVEs at Build Time</div>
+                    <div class="stat-value">≈0</div>
+                    <div class="stat-label">Near 0 Critical CVEs at Build Time</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-value">150K+</div>
-                    <div class="stat-label">Nodes Analyzed in &lt;30s</div>
+                    <div class="stat-value" data-target="66"><span class="stat-num">0</span><span>%</span></div>
+                    <div class="stat-label">Base Image Size Reduction</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Supply Chain Provenance</div>
+                    <div class="stat-value" data-target="158"><span class="stat-num">0</span><span>K+</span></div>
+                    <div class="stat-label">Call-Graph Nodes in &lt;30s</div>
                 </div>
                 <div class="stat-item reveal">
-                    <div class="stat-value">50+</div>
-                    <div class="stat-label">Engineers Mentored</div>
+                    <div class="stat-value" data-target="300"><span class="stat-num">0</span><span>+</span></div>
+                    <div class="stat-label">Security Practitioners Mentored</div>
                 </div>
             </div>
         </div>
@@ -98,22 +98,25 @@
 
                 <div class="case-study reveal">
                     <span class="case-number">01</span>
-                    <div class="case-badge"><i class="fas fa-shield-virus"></i> ZERO-CVE RUNTIME GUARANTEE</div>
-                    <h3>Project NetShield: Multi-Arch Hardened Runtimes</h3>
+                    <div class="case-badge"><i class="fas fa-industry"></i> EVENT-DRIVEN SUPPLY CHAIN</div>
+                    <h3>The Runtime Factory: Automated Container Security Engine</h3>
                     <div class="case-study-content">
                         <div>
-                            <p class="case-description"><strong>The Problem:</strong> Public base images often carry
-                                stale vulnerabilities or lack provenance, creating an insecure foundation for
-                                high-volume financial APIs.<br><br><strong>The Architecture:</strong> Engineered a
-                                "Shift-Left" factory using Wolfi (Undistro) and apko. I implemented a parallel GitHub
-                                Matrix strategy to independently build, scan (Trivy), and sign (Cosign) AMD64 and ARM64
-                                images.<br><br><strong>Impact:</strong> Achieved zero critical vulnerabilities in
-                                production runtime base images while maintaining full supply chain transparency through
-                                cryptographic signatures.</p>
+                            <p class="case-description"><strong>The Problem:</strong> Scheduled cron-rebuild models
+                                leave windows of exposure between scans. Public base images carry stale vulnerabilities
+                                and lack provenance, creating an insecure foundation for production APIs.<br><br>
+                                <strong>The Architecture:</strong> Engineered an event-driven pipeline using apko and
+                                Wolfi base packages that automatically triggers multi-architecture rebuilds the moment a
+                                fixable CVE drops. Each build is independently compiled, scanned (Trivy), signed
+                                (Cosign), and attested with SLSA Level 3 provenance — all without human
+                                intervention.<br><br>
+                                <strong>Impact:</strong> Zero critical CVEs in production. Base images reduced from
+                                135MB to 45MB (66% reduction). Idle memory overhead dropped from 4–6MB to under 1MB.
+                                Containers execute natively as uid/gid 1000 — no root.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Wolfi</span><span class="tech-tag">apko</span><span
                                     class="tech-tag">Cosign</span><span class="tech-tag">Trivy</span><span
-                                    class="tech-tag">GitHub Actions</span>
+                                    class="tech-tag">SLSA L3</span><span class="tech-tag">GitHub Actions</span>
                             </div>
                             <button class="diagram-toggle" onclick="toggleDiagram(this)"><i
                                     class="fas fa-project-diagram"></i> View Architecture Diagram <span
@@ -123,68 +126,35 @@
                     <div class="diagram-container">
                         <pre class="mermaid">
 graph TD
-    A[apko Build] --> B{Parallel Scan}
-    B -- AMD64 --> C[Trivy x86]
-    B -- ARM64 --> D[Trivy arm]
-    C & D -- Pass --> E[Push & Sign]
-    E --> F[Verified Gold Image]
-    style F fill:#312e81,stroke:#818cf8
-                    </pre>
+    A[CVE Monitor] -->|Trigger| B[apko Build Matrix]
+    B --> C{Parallel Scan}
+    C -- AMD64 --> D[Trivy x86]
+    C -- ARM64 --> E[Trivy arm]
+    D & E -- Pass --> F[Cosign Sign]
+    F --> G[SLSA L3 Attest]
+    G --> H[Verified Gold Image]
+    H --> I[Event-Driven Deploy]
+    style H fill:#312e81,stroke:#818cf8
+    style A fill:#7f1d1d,stroke:#fff
+                        </pre>
                     </div>
                 </div>
 
                 <div class="case-study reveal">
                     <span class="case-number">02</span>
-                    <div class="case-badge"><i class="fas fa-server"></i> ENTERPRISE STANDARD</div>
-                    <h3>The Enterprise "Golden Pipeline" Standard</h3>
-                    <div class="case-study-content">
-                        <div>
-                            <p class="case-description"><strong>The Challenge:</strong> Fragmented deployment processes
-                                led to unverified dependencies and base image staleness entering production across
-                                multiple teams.<br><br><strong>The Solution:</strong> Standardized product delivery for
-                                a major financial group by architecting a unified control plane in Google Artifact
-                                Registry. Enforced dependency proxying, automated rebuild triggers, and image provenance
-                                via Cosign.<br><br><strong>Impact:</strong> Reduced time-to-production by 60% while
-                                ensuring 100% artifact verification across all deployments.</p>
-                            <div class="tech-stack">
-                                <span class="tech-tag">GCP Artifact Registry</span><span class="tech-tag">Okta
-                                    Workflows</span><span class="tech-tag">Snyk</span><span
-                                    class="tech-tag">Terraform</span>
-                            </div>
-                            <button class="diagram-toggle" onclick="toggleDiagram(this)"><i
-                                    class="fas fa-project-diagram"></i> View Architecture Diagram <span
-                                    class="arrow">▼</span></button>
-                        </div>
-                    </div>
-                    <div class="diagram-container">
-                        <pre class="mermaid">
-graph TD
-    A[Development Teams] --> B[Source Control]
-    B --> C{Golden Pipeline}
-    C --> D[Dependency Proxy]
-    C --> E[Security Scanning]
-    C --> F[Image Signing]
-    D & E & F --> G[Artifact Registry]
-    G --> H[Verified Production]
-    style G fill:#312e81,stroke:#818cf8
-    style H fill:#312e81,stroke:#818cf8
-                    </pre>
-                    </div>
-                </div>
-
-                <div class="case-study reveal">
-                    <span class="case-number">03</span>
                     <div class="case-badge"><i class="fas fa-robot"></i> ZERO-TOUCH AUTOMATION</div>
                     <h3>Zero-Touch Identity & Access Automation</h3>
                     <div class="case-study-content">
                         <div>
                             <p class="case-description"><strong>The Challenge:</strong> Manual onboarding created "ghost
                                 accounts" and delayed access revocation by up to 48 hours, risking compliance failures
-                                and unauthorized access.<br><br><strong>The Solution:</strong> Engineered a fully
-                                automated lifecycle using Jira Service Management, Okta Workflows, and JumpCloud. Access
-                                is granted based on Role (RBAC) and revoked instantly upon contract
-                                termination.<br><br><strong>Impact:</strong> Eliminated ghost accounts and reduced
-                                offboarding time from 48 hours to under 5 minutes.</p>
+                                and unauthorized access.<br><br>
+                                <strong>The Architecture:</strong> Engineered a fully automated lifecycle using Jira
+                                Service Management, Okta Workflows, and JumpCloud. Access is granted based on Role
+                                (RBAC) and revoked instantly upon contract termination via webhook-driven
+                                orchestration.<br><br>
+                                <strong>Impact:</strong> Eliminated ghost accounts and reduced offboarding time from 48
+                                hours to under 5 minutes.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Okta Workflows</span><span class="tech-tag">Jira
                                     Automation</span><span class="tech-tag">JumpCloud</span><span
@@ -202,21 +172,111 @@ graph TD
     Okta -->|Onboard| Prov[Provision AWS & JumpCloud]
     Okta -->|Offboard| Kill[Revoke Sessions & Lock Device]
     style Kill fill:#7f1d1d,stroke:#fff
-                    </pre>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="case-study reveal">
+                    <span class="case-number">03</span>
+                    <div class="case-badge"><i class="fas fa-microchip"></i> UNIVERSAL FLUTTER CRYPTO INTERCEPTOR</div>
+                    <h3>Morag: Automated Binary Analysis for AOT-Compiled Flutter</h3>
+                    <div class="case-study-content">
+                        <div>
+                            <p class="case-description"><strong>The Problem:</strong> AOT-compiled and obfuscated
+                                Flutter applications hide cryptographic operations behind native binaries, evading
+                                standard Java-level interception tools and runtime instrumentation.<br><br>
+                                <strong>The Architecture:</strong> Built a Dual-Layer Discovery engine that combines
+                                high-level JVM interception (javax.crypto, flutter_secure_storage) with native memory
+                                pattern scanning. Integrated static AOT parsing via Blutter to mine data from object
+                                pools, automating extraction of hardcoded keys, initialization vectors (IVs), and
+                                platform MethodChannels.<br><br>
+                                <strong>Impact:</strong> Fully automated extraction of cryptographic material from
+                                obfuscated Flutter binaries without manual reverse engineering.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Frida</span><span class="tech-tag">Blutter</span><span
+                                    class="tech-tag">reFlutter</span><span class="tech-tag">Python</span><span
+                                    class="tech-tag">AOT Analysis</span><span class="tech-tag">Reverse Engineering</span>
+                            </div>
+                            <button class="diagram-toggle" onclick="toggleDiagram(this)"><i
+                                    class="fas fa-project-diagram"></i> View Architecture Diagram <span
+                                    class="arrow">▼</span></button>
+                        </div>
+                    </div>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TD
+    A[Flutter APK] --> B{Static Analysis}
+    B -- AOT Binary --> C[Blutter Parser]
+    B -- Dart VM --> D[JVM Hook]
+    C --> E[Object Pool Mining]
+    D --> F[flutter_secure_storage]
+    E & F --> G[Key/IV Extraction]
+    G --> H[MethodChannel Map]
+    style C fill:#312e81,stroke:#818cf8
+    style G fill:#7f1d1d,stroke:#fff
+                        </pre>
                     </div>
                 </div>
 
                 <div class="case-study reveal">
                     <span class="case-number">04</span>
+                    <div class="case-badge"><i class="fas fa-unlock-alt"></i> ROOTLESS SSL AUDITING</div>
+                    <h3>SSL Unpinner Pro: Enterprise App Auditing Platform</h3>
+                    <div class="case-study-content">
+                        <div>
+                            <p class="case-description"><strong>The Challenge:</strong> Modern Android apps use native
+                                SSL implementations (BoringSSL) and the Flutter engine's built-in certificate validation,
+                                requiring rooted devices or complex setups for traffic inspection.<br><br>
+                                <strong>The Solution:</strong> Created a rootless automation framework that performs
+                                byte-level patch orchestration via reFlutter to permanently modify compiled native
+                                binaries (libflutter.so), neutralizing BoringSSL validation structures. Standardized
+                                output parsing generates SARIF auditing data mapped to OWASP MASVS risk
+                                baselines.<br><br>
+                                <strong>Impact:</strong> Rootless SSL pinning bypass integrated directly into CI/CD
+                                security validation workflows with standardized compliance reporting.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">reFlutter</span><span class="tech-tag">BoringSSL</span><span
+                                    class="tech-tag">SARIF</span><span class="tech-tag">OWASP MASVS</span><span
+                                    class="tech-tag">Frida</span><span class="tech-tag">Python</span>
+                            </div>
+                            <button class="diagram-toggle" onclick="toggleDiagram(this)"><i
+                                    class="fas fa-project-diagram"></i> View Architecture Diagram <span
+                                    class="arrow">▼</span></button>
+                        </div>
+                    </div>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TD
+    A[Target APK] --> B{Binary Analysis}
+    B --> C[reFlutter Patch]
+    C --> D[Neutralize BoringSSL]
+    D --> E[Rootless Hook]
+    E --> F[Traffic Intercept]
+    F --> G[SARIF Generator]
+    G --> H[OWASP MASVS Map]
+    H --> I[CI/CD Report]
+    style C fill:#312e81,stroke:#818cf8
+    style H fill:#7f1d1d,stroke:#fff
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="case-study reveal">
+                    <span class="case-number">05</span>
                     <div class="case-badge"><i class="fas fa-mobile-alt"></i> ADVERSARIAL RESEARCH</div>
                     <h3>NetShield: Automated Mobile SSL Bypass Suite</h3>
                     <div class="case-study-content">
                         <div>
-                            <p class="case-description"><strong>The Challenge:</strong> Modern apps use native SSL
-                                implementations (BoringSSL) that evade standard interception tools.<br><br><strong>The
-                                    Solution:</strong> Built an orchestration engine that combines static pattern
-                                matching with Frida-based runtime instrumentation to bypass pinning in Flutter, OkHttp,
-                                and custom TrustManagers.</p>
+                            <p class="case-description"><strong>The Challenge:</strong> Modern mobile apps use native
+                                SSL implementations (BoringSSL) and Flutter's built-in certificate validation that
+                                evade standard interception tools and proxies.<br><br>
+                                <strong>The Solution:</strong> Built an orchestration engine that combines static
+                                pattern matching with Frida-based runtime instrumentation to bypass pinning in Flutter,
+                                OkHttp, and custom TrustManagers. Supports both Java-level and native hook
+                                strategies.<br><br>
+                                <strong>Impact:</strong> Automated SSL pinning bypass across diverse Android
+                                architectures enabling comprehensive security testing without manual reverse
+                                engineering.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">Frida</span><span class="tech-tag">BoringSSL</span><span
                                     class="tech-tag">Python</span><span class="tech-tag">Reverse Engineering</span>
@@ -234,7 +294,50 @@ graph TD
     B -- Java --> D[Hook TrustManager]
     C & D --> E[Runtime Bypass via Frida]
     E --> F[Intercept Encrypted Traffic]
-                    </pre>
+    style E fill:#312e81,stroke:#818cf8
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="case-study reveal">
+                    <span class="case-number">06</span>
+                    <div class="case-badge"><i class="fas fa-filter"></i> SCA NOISE REDUCTION</div>
+                    <h3>NetShield Reachability Analyzer: Call-Graph Driven SCA</h3>
+                    <div class="case-study-content">
+                        <div>
+                            <p class="case-description"><strong>The Challenge:</strong> Standard SCA tools flag every
+                                library vulnerability regardless of reachability, flooding teams with false positives and
+                creating alert fatigue.<br><br>
+                                <strong>The Architecture:</strong> Built a static analysis engine that parses abstract
+                                call-graphs from application bytecode and cross-references them with SCA vulnerability
+                                databases. Only reachable code paths are flagged, eliminating noise from dormant library
+                                code.<br><br>
+                                <strong>Impact:</strong> Mapped 158K+ call-graph nodes in under 30 seconds. Validated
+                                against WebGoat: 36 of 39 flagged CVEs were reachable — proving 3 were false positives
+                                that standard tooling would have required manual triage to identify.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Java</span><span class="tech-tag">Soot</span><span
+                                    class="tech-tag">WebGoat</span><span class="tech-tag">Call Graph Analysis</span><span
+                                    class="tech-tag">Python</span>
+                            </div>
+                            <button class="diagram-toggle" onclick="toggleDiagram(this)"><i
+                                    class="fas fa-project-diagram"></i> View Architecture Diagram <span
+                                    class="arrow">▼</span></button>
+                        </div>
+                    </div>
+                    <div class="diagram-container">
+                        <pre class="mermaid">
+graph TD
+    A[App Bytecode] --> B[Call Graph Builder]
+    C[SCA Vuln DB] --> D{Reachability Engine}
+    B --> D
+    D -- Reachable --> E[Flagged]
+    D -- Unreachable --> F[Suppressed]
+    E --> G[Prioritized Report]
+    F --> H[Noise Eliminated]
+    style D fill:#312e81,stroke:#818cf8
+    style F fill:#065f46,stroke:#6ee7b7
+                        </pre>
                     </div>
                 </div>
 
@@ -254,18 +357,18 @@ graph TD
                     <h3>Offensive Security</h3>
                     <ul>
                         <li>Web/API: Burp Suite Pro, OWASP ZAP</li>
-                        <li>Mobile: Frida, Objection, Jadx-GUI</li>
+                        <li>Mobile: Frida, Objection, Jadx-GUI, APKTool</li>
                         <li>Network Recon: Nmap, Wireshark</li>
                         <li>Exploit Development: Python & Bash</li>
                     </ul>
                 </div>
                 <div class="skill-card reveal">
                     <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>Cloud & Hardening</h3>
+                    <h3>Cloud & Container Hardening</h3>
                     <ul>
                         <li>AWS Security Hub & GuardDuty</li>
                         <li>Wolfi (Undistro) & apko Hardening</li>
-                        <li>Docker & Kubernetes Security</li>
+                        <li>Kubernetes NetworkPolicies & RBAC</li>
                         <li>Terraform (IaC) & Linux Hardening</li>
                     </ul>
                 </div>
@@ -273,10 +376,20 @@ graph TD
                     <div class="skill-icon"><i class="fas fa-link"></i></div>
                     <h3>AppSec & Supply Chain</h3>
                     <ul>
-                        <li>Artifact Registry Governance</li>
+                        <li>SLSA L3 Provenance & Sigstore/Cosign</li>
                         <li>Snyk, Checkmarx, SonarQube</li>
-                        <li>Sigstore/Cosign Provenance</li>
+                        <li>SARIF & OWASP MASVS Mapping</li>
                         <li>GitHub Advanced Security</li>
+                    </ul>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Mobile Binary Analysis</h3>
+                    <ul>
+                        <li>Blutter AOT Object Pool Mining</li>
+                        <li>reFlutter Byte-Level Patching</li>
+                        <li>BoringSSL / Native Hook Engineering</li>
+                        <li>Call Graph & Reachability Analysis</li>
                     </ul>
                 </div>
                 <div class="skill-card reveal">
@@ -303,62 +416,91 @@ graph TD
                 <div class="timeline-item reveal">
                     <div class="timeline-header">
                         <div>
-                            <div class="timeline-title">Lead Product Security Engineer</div>
-                            <div class="timeline-company">Tier-1 Financial Holding Company</div>
+                            <div class="timeline-title">Senior Application Security Engineer</div>
+                            <div class="timeline-company">Moniepoint Group</div>
                         </div>
-                        <div class="timeline-period">2024 — Present</div>
+                        <div class="timeline-period">Jan 2026 — Present</div>
                     </div>
                     <ul>
-                        <li><strong>Adversarial Research:</strong> Led grey-box assessments on flagship banking
-                            platforms, uncovering critical Race Conditions and IDOR-based Account Takeovers.</li>
-                        <li><strong>Standardization:</strong> Designed the "Golden Pipeline" for Payment APIs, ensuring
-                            100% of artifacts are signed and scanned before deployment.</li>
-                        <li><strong>Mentorship:</strong> Built security champion program training 30+ engineers on
-                            secure coding practices and threat modeling.</li>
+                        <li><strong>Threat Modeling:</strong> Led STRIDE-based threat models for payment processing
+                            pipelines, driving risk-based decisions that reduced the production attack surface across
+                            multi-tenant financial trust boundaries.</li>
+                        <li><strong>Vulnerability Discovery:</strong> Identified and drove remediation for a wide
+                            range of application-layer flaws across banking platforms including SSRF, IDOR, broken
+                            access control, HTTP desync attacks, BFLA, and mass assignment vulnerabilities through
+                            systematic grey-box assessments.</li>
+                        <li><strong>Product Security Advisory:</strong> Performed security architecture reviews and
+                            risk evaluations for mobile attestation tooling, assessing detection coverage for SSL
+                            pinning bypass, rooted devices, and emulator environments to validate security
+                            requirements ahead of production deployment.</li>
+                        <li><strong>Security Training:</strong> Led Knowledge Sharing Sessions (KSS) for the
+                            engineering teams on common vulnerability classes and remediation patterns,
+                            equipping developers to prevent security defects earlier in the development lifecycle.
+                        </li>
+                        <li><strong>Enterprise Standards:</strong> Architected and enforced immutable Kubernetes
+                            NetworkPolicies isolating internal banking microservices to authorized endpoints via explicit
+                            label matching, setting a company-wide configuration standard.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-header">
+                        <div>
+                            <div class="timeline-title">Cybersecurity Engineer</div>
+                            <div class="timeline-company">FCMB Group</div>
+                        </div>
+                        <div class="timeline-period">Oct 2024 — Dec 2025</div>
+                    </div>
+                    <ul>
+                        <li><strong>DevSecOps Orchestration:</strong> Architected the end-to-end security lifecycle
+                            integrating automated gates for SAST, SCA, DAST, IaC scanning, and SBOM verification across
+                            production banking environments.</li>
+                        <li><strong>Database Hardening:</strong> Coordinated end-to-end transport and static encryption
+                            policies with corporate DBAs, aligning database access limits with PCI DSS and ISO 27001
+                            audit standards.</li>
+                        <li><strong>Vulnerability Discovery:</strong> Uncovered critical business-logic flaws including
+                            double-spend race conditions and IDOR-based account takeovers during grey-box assessments of
+                            flagship banking platforms.</li>
                     </ul>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Application Security Engineer</div>
-                            <div class="timeline-company">Tier-1 Commercial Bank</div>
+                            <div class="timeline-company">First Bank Plc</div>
                         </div>
-                        <div class="timeline-period">2023 — 2024</div>
+                        <div class="timeline-period">Sep 2023 — Sep 2024</div>
                     </div>
                     <ul>
-                        <li><strong>API Protection:</strong> Discovered critical Refresh Token Hijacking and auth bypass
-                            scenarios on corporate endpoints serving 2M+ users.</li>
-                        <li><strong>Security Gates:</strong> Integrated automated SAST/DAST into CI/CD, reducing
-                            production vulnerability delta by 40%.</li>
-                        <li><strong>Compliance:</strong> Led PCI DSS certification efforts for payment processing
-                            infrastructure.</li>
+                        <li><strong>AppSec Pipeline Integration:</strong> Automated native application security checks
+                            within enterprise CI/CD, reducing production deployment risk indicators by 40% through
+                            automated SAST/DAST gates.</li>
+                        <li><strong>WAF Layer Protection:</strong> Deployed Web Application Firewall protections to
+                            intercept edge manipulation traffic targeting backend endpoints and relational databases.
+                        </li>
+                        <li><strong>Security Assessments:</strong> Conducted technical target assessments and application
+                            layer penetration tests on web, API, and mobile architectures serving 2M+ users.</li>
+                        <li><strong>Toolchain Integration:</strong> Managed deployment and configuration for Symantec
+                            Remote Browser Isolation, NoName API Security, and Prisma Cloud across the enterprise.</li>
                     </ul>
                 </div>
                 <div class="timeline-item reveal">
                     <div class="timeline-header">
                         <div>
                             <div class="timeline-title">Cybersecurity Instructor & Mentor</div>
-                            <div class="timeline-company">10Alytics</div>
+                            <div class="timeline-company">10alytics</div>
                         </div>
-                        <div class="timeline-period">2024 — 2025</div>
+                        <div class="timeline-period">Jan 2022 — Apr 2024</div>
                     </div>
                     <ul>
-                        <li>Designed hands-on labs for Wazuh SIEM architecture and Incident Response workflows.</li>
-                        <li>Mentored 50+ students in transitioning to professional security roles with 85% placement
-                            rate.</li>
-                    </ul>
-                </div>
-                <div class="timeline-item reveal">
-                    <div class="timeline-header">
-                        <div>
-                            <div class="timeline-title">Technical Support Engineer (L3)</div>
-                            <div class="timeline-company">Enterprise Software Firm</div>
-                        </div>
-                        <div class="timeline-period">2021 — 2023</div>
-                    </div>
-                    <ul>
-                        <li>Managed enterprise NNMi clusters and platform upgrades for Fortune 500 clients.</li>
-                        <li>Supported Kubernetes security compliance for large-scale container deployments.</li>
+                        <li><strong>Curriculum Design:</strong> Built a repeatable education framework featuring the
+                            VulnBank Kubernetes lab environment, training 300+ security practitioners on real-world
+                            defensive engineering concepts.</li>
+                        <li><strong>Technical Workshops:</strong> Orchestrated deep-dive sessions on perimeter
+                            penetration testing, vulnerability lifecycle management, and SIEM monitoring (Wazuh, Elastic,
+                            Graylog).</li>
+                        <li><strong>Career Pipeline:</strong> Guided students from fundamentals to job-ready skill
+                            verification, achieving measurable placement outcomes through structured lab-based assessment.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -372,92 +514,80 @@ graph TD
                 <h2 class="section-title">Projects & Research</h2>
             </div>
             <div class="projects-grid">
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>NetShield Hardened Images</h3>
-                    <p>Hardened, 0-CVE runtime multi-arch base images built with Wolfi/apko and cryptographically signed
-                        with Cosign for supply chain verification.</p>
+                <div class="project-card featured reveal">
+                    <div class="project-icon"><i class="fas fa-industry"></i></div>
+                    <h3>Runtime Factory</h3>
+                    <p>Event-driven container security engine using apko/Wolfi with SLSA Level 3 provenance. Rebuilds,
+                        scans, and signs images automatically when fixable CVEs drop. 66% size reduction, rootless
+                        execution.</p>
                     <div class="project-links">
                         <a href="https://github.com/Ekene95/secops-base-images" class="project-link" target="_blank"><i
                                 class="fab fa-github"></i> GitHub →</a>
-                        <a href="https://hub.docker.com/u/kenzman" class="project-link" target="_blank"><i
-                                class="fab fa-docker"></i> Registry →</a>
                         <a href="https://dev.to/kenzman/from-base-images-to-runtime-factories-eliminating-sca-noise-with-event-driven-rebuilds-3egm"
-                            class="project-link" target="_blank"><i class="fab fa-dev"></i> Article →</a>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fab fa-linux"></i></div>
-                    <h3>Threat Hunting with Wazuh</h3>
-                    <p>Combining Wazuh File Integrity Monitoring with Yara rules for proactive threat detection on Linux
-                        endpoints.</p>
-                    <div class="project-links">
-                        <a href="https://medium.com/@ekeneejike/threat-hunting-with-wazuh-fim-and-yara-on-linux-endpoints-cf8f5b84ae6e"
-                            class="project-link" target="_blank"><i class="fab fa-medium"></i> Read Article →</a>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-terminal"></i></div>
-                    <h3>Bash Log Analyzer</h3>
-                    <p>Automated script for parsing authentication logs, detecting anomalies, and performing geolocation
-                        analysis on failed login attempts.</p>
-                    <div class="project-links">
-                        <a href="https://medium.com/@ekeneejike/simple-bash-script-for-log-analysis-db003dd9be"
-                            class="project-link" target="_blank"><i class="fab fa-medium"></i> View Code →</a>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-network-wired"></i></div>
-                    <h3>Network Vulnerability Scanner</h3>
-                    <p>Bash-based network mapper and service identifier for rapid security assessments and
-                        reconnaissance.</p>
-                    <div class="project-links">
-                        <a href="https://www.youtube.com/watch?v=LWZckCdFH1I&t=182s" class="project-link"
-                            target="_blank"><i class="fab fa-youtube"></i> Watch Demo →</a>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fab fa-docker"></i></div>
-                    <h3>Kubernetes Operations Guide</h3>
-                    <p>Technical series on optimizing K8s log analysis, deployment management, and security hardening
-                        using modern tooling.</p>
-                    <div class="project-links">
-                        <a href="https://www.warp.dev/terminus/kubectl-get-logs" class="project-link" target="_blank"><i
-                                class="fas fa-terminal"></i> Kube Logs →</a>
-                        <a href="https://www.warp.dev/terminus/delete-kubernetes-deployments-with-kubectl"
-                            class="project-link" target="_blank"><i class="fas fa-terminal"></i> Kube Delete →</a>
-                    </div>
-                </div>
-                <div class="project-card reveal">
-                    <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>AWS Cloud Architecture Workshop</h3>
-                    <p>Delivered technical workshops on ECS Fargate, RDS security, and Docker Hub integration patterns
-                        for scalable workloads.</p>
-                    <div class="project-links">
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350511119863574529/"
-                            class="project-link" target="_blank"><i class="fab fa-linkedin"></i> View Workshop →</a>
+                            class="project-link" target="_blank"><i class="fab fa-dev"></i> Technical Deep Dive →</a>
                     </div>
                 </div>
                 <div class="project-card featured reveal">
-                    <div class="project-icon"><i class="fas fa-microscope"></i></div>
-                    <h3>NetShield Analyzer (Java)</h3>
-                    <p>A static analysis engine designed to solve SCA "noise." Successfully mapped 158K+ call graph
-                        nodes in &lt;30s during benchmarks, identifying reachable vs. unreachable vulnerabilities.</p>
+                    <div class="project-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Morag</h3>
+                    <p>Universal Flutter cryptography interceptor combining JVM interception with Blutter AOT object
+                        pool mining. Automates extraction of hardcoded keys, IVs, and MethodChannels from obfuscated
+                        Flutter binaries.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ekene95/morag" class="project-link" target="_blank"><i
+                                class="fab fa-github"></i> GitHub →</a>
+                    </div>
+                </div>
+                <div class="project-card featured reveal">
+                    <div class="project-icon"><i class="fas fa-unlock-alt"></i></div>
+                    <h3>SSL Unpinner Pro</h3>
+                    <p>Rootless SSL pinning bypass framework using reFlutter byte-level patching. Outputs SARIF auditing
+                        data mapped to OWASP MASVS risk baselines for CI/CD security validation.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Ekene95/ssl-unpinner-pro" class="project-link" target="_blank"><i
+                                class="fab fa-github"></i> GitHub →</a>
+                    </div>
+                </div>
+                <div class="project-card featured reveal">
+                    <div class="project-icon"><i class="fas fa-filter"></i></div>
+                    <h3>NetShield Reachability Analyzer</h3>
+                    <p>Call-graph driven SCA engine that eliminates false positives by analyzing reachable vs.
+                        unreachable code paths. Benchmarked at 158K+ nodes in under 30 seconds on WebGoat.</p>
                     <div class="project-links">
                         <a href="https://github.com/Netshield-Enterprise/netshield-analyzer" class="project-link"
                             target="_blank"><i class="fab fa-github"></i> GitHub →</a>
                         <a href="https://dev.to/kenzman/39-cves-in-webgoat-only-36-were-reachable-3i6m"
-                            class="project-link" target="_blank"><i class="fab fa-dev"></i> Technical Research →</a>
+                            class="project-link" target="_blank"><i class="fab fa-dev"></i> Research →</a>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>NetShield SSL Bypass Suite</h3>
+                    <p>Python-driven static and dynamic evaluation engine using Frida to hook OkHttp, custom
+                        TrustManagers, and Network Security Configurations.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Netshield-Enterprise/netshield-ssl-bypass" class="project-link"
+                            target="_blank"><i class="fab fa-github"></i> GitHub →</a>
                     </div>
                 </div>
                 <div class="project-card reveal">
                     <div class="project-icon"><i class="fas fa-network-wired"></i></div>
                     <h3>Banking Infrastructure Lab</h3>
-                    <p>A full-scale Kubernetes-based simulation of a banking environment designed for validating
-                        zero-trust architectures and simulating multi-stage attack vectors.</p>
+                    <p>Full-scale Kubernetes-based simulation of a banking environment for validating zero-trust
+                        architectures and simulating multi-stage attack vectors.</p>
                     <div class="project-links">
                         <a href="https://github.com/Commando-X/vuln-bank-devsecops/pull/14" class="project-link"
                             target="_blank"><i class="fas fa-code-branch"></i> View Contribution →</a>
+                    </div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>AWS Cloud Architecture Workshop</h3>
+                    <p>Technical workshops on ECS Fargate, RDS security, and Docker Hub integration patterns for
+                        scalable workloads.</p>
+                    <div class="project-links">
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7350511119863574529/"
+                            class="project-link" target="_blank"><i class="fab fa-linkedin"></i> View Workshop →</a>
                     </div>
                 </div>
             </div>
@@ -473,17 +603,30 @@ graph TD
             <div class="projects-grid">
                 <div class="project-card reveal">
                     <div class="project-icon"><i class="fas fa-microphone"></i></div>
-                    <h3>ISC2 Nigeria Chapter</h3>
-                    <p>Delivered "Threat Modeling for Complex Ecosystems," teaching architectural security to certified
-                        practitioners.</p>
-                    <div class="project-links"><span class="tech-tag">CPE Provider</span></div>
+                    <h3>ISC2 Nigeria Chapter Keynote</h3>
+                    <p class="leadership-meta">May 2026</p>
+                    <p>Delivered "Threat Modeling for Complex Ecosystems," detailing defense-in-depth strategies for
+                        multi-tenant financial trust boundaries, legacy core banking integrations, and defensive mapping
+                        using STRIDE/DREAD frameworks.</p>
+                    <div class="project-links"><span class="tech-tag">CPE Provider</span><span
+                            class="tech-tag">Keynote</span></div>
                 </div>
                 <div class="project-card reveal">
                     <div class="project-icon"><i class="fas fa-chalkboard-teacher"></i></div>
-                    <h3>ISACA Lagos Boot Camp</h3>
-                    <p>Instructor for a 2-part Offensive Security series using the "Banking Infrastructure Lab" to train
-                        professionals on multi-stage attack vectors and zero-trust validation.</p>
-                    <div class="project-links"><span class="tech-tag">SME Training</span></div>
+                    <h3>Private Offensive Security Series</h3>
+                    <p>Instructor for a 2-part offensive security training series using the Banking Infrastructure Lab
+                        to train professionals on multi-stage attack vectors, zero-trust validation, and defensive
+                        engineering patterns.</p>
+                    <div class="project-links"><span class="tech-tag">SME Training</span><span
+                            class="tech-tag">Private</span></div>
+                </div>
+                <div class="project-card reveal">
+                    <div class="project-icon"><i class="fas fa-users"></i></div>
+                    <h3>Technical Workshops</h3>
+                    <p>Hosted live interactive training sessions on attack vector exploitation and defensive security
+                        automation for professional audiences of 120+ attendees across multiple organizations.</p>
+                    <div class="project-links"><span class="tech-tag">120+ Attendees</span><span
+                            class="tech-tag">Hands-On</span></div>
                 </div>
             </div>
         </div>
@@ -535,7 +678,7 @@ graph TD
             });
         });
 
-        // Scroll reveal
+        // Scroll reveal with staggered entrance
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry, i) => {
                 if (entry.isIntersecting) {
@@ -561,10 +704,53 @@ graph TD
             }
         }
 
+        // Animated counter on scroll
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target);
+            if (isNaN(target) || target === 0) return;
+            const numSpan = el.querySelector('.stat-num');
+            if (!numSpan) return;
+            let current = 0;
+            const increment = Math.ceil(target / 30);
+
+            function tick() {
+                current += increment;
+                if (current >= target) {
+                    numSpan.textContent = target;
+                    return;
+                }
+                numSpan.textContent = current;
+                requestAnimationFrame(() => setTimeout(tick, 24));
+            }
+            tick();
+        }
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        document.querySelectorAll('.stat-value[data-target]').forEach(el => counterObserver.observe(el));
+
         // Nav background on scroll
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('nav');
             nav.style.borderBottomColor = window.scrollY > 50 ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.04)';
+            nav.style.background = window.scrollY > 50 ? 'rgba(9,9,11,0.92)' : 'rgba(9,9,11,0.8)';
+        });
+
+        // Mouse tracking for case study card radial highlight
+        document.querySelectorAll('.case-study').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
         });
     </script>
 </body>
