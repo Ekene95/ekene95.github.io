@@ -310,6 +310,26 @@ nav .container {
     font-weight: 400;
 }
 
+.profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 12px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.profile-links a {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.profile-links a:hover { color: var(--accent-light); }
+
 /* ─── BUTTONS ─── */
 .btn {
     display: inline-flex;
@@ -754,6 +774,47 @@ section {
     gap: 20px;
 }
 
+/* ─── RESEARCH ─── */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.research-item {
+    min-height: 240px;
+    padding: 28px;
+    background: linear-gradient(145deg, rgba(99,102,241,0.1), var(--bg-card));
+    border: 1px solid var(--border);
+    border-top: 2px solid var(--accent);
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.research-item:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-hover);
+}
+
+.research-index {
+    display: block;
+    margin-bottom: 32px;
+    color: var(--accent-light);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.research-item h3 {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+.research-item p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    line-height: 1.7;
+}
+
 .project-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
@@ -925,6 +986,7 @@ footer {
     .hero-grid { grid-template-columns: 1fr; gap: 40px; }
     .profile-card { order: -1; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .research-grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
@@ -951,6 +1013,7 @@ footer {
     .hero h1 { font-size: clamp(2rem, 6vw, 2.8rem); }
     .case-study { padding: 24px; }
     .projects-grid { grid-template-columns: 1fr; }
+    .research-grid { grid-template-columns: 1fr; }
     .timeline { padding-left: 24px; }
     .timeline-item { padding-left: 20px; }
     .timeline-item::before { left: -28px; }
