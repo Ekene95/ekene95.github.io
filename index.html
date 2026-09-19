@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Ekene Ejike | Defensive Systems. Offensive Mindset.</title>
     <meta name="description"
-        content="Joseph Ekene Ejike is a Co-Founder and Principal Security Architect at NetShield Limited, specializing in AppSec, DevSecOps, supply chain security, and adversarial research.">
+        content="Ekene is a Senior AppSec and DevSecOps Engineer specializing in offensive security, supply chain security, adversarial research, and deterministic security automation.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -29,6 +29,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#architecture">Architecture</a></li>
                 <li><a href="#arsenal">Arsenal</a></li>
+                <li><a href="#practice">Practice</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -42,9 +43,9 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-tag">PRINCIPAL TRACK — SENIOR APPSEC &amp; DEVSECOPS ENGINEER</div>
-                    <h1>Defensive Systems.<br><span class="highlight">Offensive Mindset.</span></h1>
-                    <p class="hero-subtitle">Joseph Ekene Ejike is a Senior AppSec &amp; DevSecOps Engineer at NetShield Limited, building toward principal-level security architecture through deterministic security guardrails, zero-trust container supply chains, and autonomous vulnerability discovery engines.</p>
+                    <div class="hero-tag">PRINCIPAL TRACK / SENIOR APPSEC &amp; DEVSECOPS ENGINEER</div>
+                    <h1>Attack.<br><span class="highlight">Engineer.</span><br>Verify.</h1>
+                    <p class="hero-subtitle">Ekene is a Senior AppSec &amp; DevSecOps Engineer. He uses offensive thinking to engineer stronger systems: adversarial research, automated security controls, and verification that holds under pressure.</p>
                     <div class="hero-cta">
                         <a href="#architecture" class="btn btn-primary"><i class="fas fa-code"></i> View
                             Architecture</a>
@@ -56,7 +57,7 @@
                     <div class="profile-card-inner">
                         <img src="Profile.jpg" alt="Joseph Ekene Ejike" class="profile-img">
                         <div class="profile-name">Joseph Ekene Ejike</div>
-                        <div class="profile-role">Senior AppSec &amp; DevSecOps Engineer<br>NetShield Limited</div>
+                        <div class="profile-role">Senior AppSec &amp; DevSecOps Engineer</div>
                         <div class="profile-links">
                             <a href="mailto:ekeneejike@gmail.com">Email</a>
                             <a href="https://github.com/Ekene95" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -65,6 +66,32 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="brand-principles" aria-label="Operating principles">
+        <div class="container">
+            <div class="principles-intro">
+                <span class="section-tag">Operating System</span>
+                <p>Offensive security is the input. Engineering is the method. Verification is the standard.</p>
+            </div>
+            <div class="principles-grid">
+                <article class="principle principle-attack">
+                    <span class="principle-index">01</span>
+                    <h2>Attack</h2>
+                    <p>Offensive security, research, exploitation, and adversarial thinking.</p>
+                </article>
+                <article class="principle principle-engineer">
+                    <span class="principle-index">02</span>
+                    <h2>Engineer</h2>
+                    <p>AppSec, DevSecOps, architecture, automation, and supply-chain security.</p>
+                </article>
+                <article class="principle principle-verify">
+                    <span class="principle-index">03</span>
+                    <h2>Verify</h2>
+                    <p>Continuous testing, deterministic controls, regression testing, and autonomous discovery.</p>
+                </article>
             </div>
         </div>
     </section>
@@ -410,6 +437,84 @@ graph TD
         </div>
     </section>
 
+    <section id="practice" class="offensive-practice">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Attack / Verify</span>
+                <h2 class="section-title">Offensive Practice</h2>
+            </div>
+            <p class="practice-intro reveal">I test the assumptions that sit between a valid request and a valid action. Recent assessment work spans identity, authorization, business state, session integrity, application-layer exposure, and the paths that connect them.</p>
+            <div class="skills-grid">
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-key"></i></div>
+                    <h3>Identity &amp; Verification Abuse</h3>
+                    <ul>
+                        <li>OTP, USSD, and phone-ownership verification bypasses</li>
+                        <li>Device-mismatch and session-replay paths</li>
+                        <li>Authentication state and token issuance analysis</li>
+                        <li>Browser-driven proof of real user-flow reachability</li>
+                    </ul>
+                    <div class="practice-proof">PoC-backed / authn + business logic</div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-unlock-keyhole"></i></div>
+                    <h3>Authorization &amp; IDOR</h3>
+                    <ul>
+                        <li>Cross-account reads, writes, and destructive actions</li>
+                        <li>Sequential identifier and object-scope analysis</li>
+                        <li>BOLA/BFLA across customer and business workflows</li>
+                        <li>Role, tenant, and ownership guard consistency</li>
+                    </ul>
+                    <div class="practice-proof">PoC-backed / access control</div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+                    <h3>Business Logic &amp; Privilege</h3>
+                    <ul>
+                        <li>State-machine gaps and incomplete terminal-state checks</li>
+                        <li>Privilege grants before KYC or approval completion</li>
+                        <li>Transaction-state manipulation and separation-of-duties flaws</li>
+                        <li>Source-to-live hypotheses through the <code>/investigate-code</code> lane</li>
+                    </ul>
+                    <div class="practice-proof">PoC-backed / critical workflows</div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-flask-vial"></i></div>
+                    <h3>Evidence-Driven Validation</h3>
+                    <ul>
+                        <li>Differential replay against baseline and altered identities</li>
+                        <li>API, browser, and source-code triangulation</li>
+                        <li>Reproducible request/response evidence and impact proof</li>
+                        <li>False-positive rejection before reporting</li>
+                    </ul>
+                    <div class="practice-proof">Validator standard / zero noise</div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-fingerprint"></i></div>
+                    <h3>Session, Token &amp; Crypto Integrity</h3>
+                    <ul>
+                        <li>JWT signing, expiration, invalidation, and privilege-forgery paths</li>
+                        <li>Session fixation, hijacking, replay, and concurrent-session controls</li>
+                        <li>Cleartext PINs, credentials, secrets, and cryptographic material</li>
+                        <li>Token and session handling reviewed across web and API boundaries</li>
+                    </ul>
+                    <div class="practice-proof">Representative coverage / authn + crypto</div>
+                </div>
+                <div class="skill-card reveal">
+                    <div class="skill-icon"><i class="fas fa-server"></i></div>
+                    <h3>Platform &amp; Runtime Exposure</h3>
+                    <ul>
+                        <li>HTTP request smuggling, desynchronization, and response leakage</li>
+                        <li>Service Worker message abuse and client-side token exfiltration</li>
+                        <li>Unsandboxed script execution, command injection, and root-level impact</li>
+                        <li>Environment secrets and container service-account exposure</li>
+                    </ul>
+                    <div class="practice-proof">Representative coverage / platform security</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="experience">
         <div class="container">
             <div class="section-header reveal">
@@ -582,14 +687,13 @@ graph TD
                 <article class="research-item reveal">
                     <span class="research-index">R01 / LOCAL RESEARCH</span>
                     <h3>gRPC Framing &amp; HTTP/2 Stream State Confusion</h3>
-                    <p>Deep-dive research in the local <code>h2-terminator</code> project on five-byte gRPC headers and HTTP/2 DATA frame mutations, testing stream-state desynchronization across reverse proxies and backend runtimes.</p>
+                    <p>Independent research on five-byte gRPC headers and HTTP/2 DATA frame mutations, testing stream-state desynchronization across reverse proxies and backend runtimes.</p>
                 </article>
                 <article class="research-item reveal">
                     <span class="research-index">R02 / COMMUNITY LAB</span>
                     <h3>VulnBank Zero-Trust Infrastructure Lab</h3>
-                    <p>Kubernetes-native banking simulation using Kong route controls, PIN-reset rate limits, and pod NetworkPolicies to contain SSRF/RCE chains without blocking delivery. Community contribution focused on <code>deploy/k8s-infra-hardening</code>; also a planned validation lab for the local HTTP/2 research.</p>
+                    <p>Kubernetes-native banking simulation using Kong route controls, PIN-reset rate limits, and pod NetworkPolicies to contain SSRF/RCE chains without blocking delivery. Contributed zero-trust infrastructure hardening to the community project as a practical environment for testing resilient security controls.</p>
                     <div class="project-links">
-                        <a href="https://github.com/Commando-X/vuln-bank-devsecops/tree/main/deploy/k8s-infra-hardening" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Lab Path →</a>
                         <a href="https://github.com/Commando-X/vuln-bank-devsecops/pull/14" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fas fa-code-branch"></i> Contribution PR →</a>
                     </div>
                 </article>
@@ -641,8 +745,7 @@ graph TD
         <div class="container">
             <div class="cta-box reveal">
                 <h2>Let's build something secure.</h2>
-                <p>Interested in collaborating on security architecture, adversarial research, or DevSecOps strategy?
-                    Let's connect.</p>
+                <p>Have a system, pipeline, or security problem worth pressure-testing? Bring the attack surface. We will engineer the controls and verify that they hold.</p>
                 <a href="mailto:ekeneejike@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Get in
                     Touch</a>
             </div>
