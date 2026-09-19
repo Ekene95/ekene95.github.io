@@ -55,7 +55,7 @@
                 </div>
                 <div class="profile-card">
                     <div class="profile-card-inner">
-                        <img src="Profile.jpg" alt="Joseph Ekene Ejike" class="profile-img">
+                        <img src="face_card.png" alt="Joseph Ekene Ejike" class="profile-img">
                         <div class="profile-name">Joseph Ekene Ejike</div>
                         <div class="profile-role">Senior AppSec &amp; DevSecOps Engineer</div>
                         <div class="profile-links">
@@ -463,7 +463,8 @@ graph TD
                         <li>Cross-account reads, writes, and destructive actions</li>
                         <li>Sequential identifier and object-scope analysis</li>
                         <li>BOLA/BFLA across customer and business workflows</li>
-                        <li>Role, tenant, and ownership guard consistency</li>
+                        <li>Mass assignment and unauthorized record overwrites</li>
+                        <li>Role, tenant, ownership, and relationship-scope guard consistency</li>
                     </ul>
                     <div class="practice-proof">PoC-backed / access control</div>
                 </div>
@@ -474,6 +475,8 @@ graph TD
                         <li>State-machine gaps and incomplete terminal-state checks</li>
                         <li>Privilege grants before KYC or approval completion</li>
                         <li>Transaction-state manipulation and separation-of-duties flaws</li>
+                        <li>Unauthorized modification of identity and related-party records</li>
+                        <li>Cross-account workflow transitions without object ownership</li>
                         <li>Source-to-live hypotheses through the <code>/investigate-code</code> lane</li>
                     </ul>
                     <div class="practice-proof">PoC-backed / critical workflows</div>
@@ -506,10 +509,12 @@ graph TD
                     <ul>
                         <li>HTTP request smuggling, desynchronization, and response leakage</li>
                         <li>Service Worker message abuse and client-side token exfiltration</li>
+                        <li>Configuration poisoning and SSRF through unvalidated server-side URLs</li>
+                        <li>Out-of-band callback validation and sensitive transaction-routing impact</li>
                         <li>Unsandboxed script execution, command injection, and root-level impact</li>
                         <li>Environment secrets and container service-account exposure</li>
                     </ul>
-                    <div class="practice-proof">Representative coverage / platform security</div>
+                    <div class="practice-proof">PoC-backed / SSRF + platform security</div>
                 </div>
             </div>
         </div>
